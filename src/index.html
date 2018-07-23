@@ -4,27 +4,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSS Grid Fundamentals!</title>
+  <title>A Viz of U.S. Craft Beers</title>
 </head>
 
 <body>
   <div class="container">
-    <div class="item map_info">
-      <div class="item select_state"> 1. Click on a state. </div>
-      <div class="item current_state">State selected: Mississippi</div>
-      <div class="item select_brewery">2. Hover over a brewery.</div>
+
+    <div class="map_container">
+        <div class="item map_info">
+            <div class="item select_state"> 1. Click on a state. </div>
+            <div class="item current_state">State selected: Mississippi</div>
+            <div class="item select_brewery">2. Hover over a brewery.</div>
+        </div>
+          <div class="item map"></div>
     </div>
-    <div class="item map">Map</div>
+
     <div class="plot_container">
       <div class="item scatter_info">3. Hover over a beer.</div>
-      <div class="item scatterplot">Scatterplot</div>
+      <div class="item scatterplot"></div>
     </div>
+
     <div class="histograms">
       <div class="item abv_info">Average alcohol by volume of all beers in Mississippi</div>
-      <div class="item abv">ABV Histogram</div>
+      <div class="item abv"></div>
       <div class="item ibu_info">Average IBU (bitterness) of all beers in Mississippi</div>
-      <div class="item ibu">IBU Histogram</div>
+      <div class="item ibu"></div>
     </div>
+    
   </div>
   <script src="bundle.js"></script>
 </body>
