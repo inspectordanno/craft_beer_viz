@@ -90,9 +90,9 @@ function ibuHistogram(beers, exists) {
       svg.append("text")
           .attr("transform", `translate(${(width/2)}, ${height + margin.top * 4})`)
           .style("text-anchor", "middle")
-          .style('font-size', `${width / 20}`)
+          .style('font-size', `${width / 20}px`)
           .attr('fill', '#b44663')
-          .text("International Bitterness Units");
+          .text("IBU");
 
       //add y axis
       const yAxis = svg.append('g') //appends a new g element
@@ -105,22 +105,22 @@ function ibuHistogram(beers, exists) {
           .attr('y', 0 - margin.left * .6)
           .attr('x', 0 - (height/2))
           .style("text-anchor", "middle")
-          .style('font-size', `${width / 20}`)
+          .style('font-size', `${width / 20}px`)
           .text("Frequency");
 
       svg.append('text')
-          .attr('x', width * .62)
-          .attr('y', height * .02)
+          .attr('x', width * .35)
+          .attr('y', height * .0005)
           .attr('fill', '#b44663')
           .style('font-style', 'italic')
-          .style('font-size', `${width / 27}`)
-          .text('Histogram of beers by IBU.');
+          .style('font-size', `${width / 27}px`)
+          .text('Beers with higher IBU are more bitter.');
 
       //adjust axis tick labels
 
       d3.selectAll('.tick>text')
         .each(function(d,i) {
-          d3.select(this).style('font-size', `${width / 29}`);
+          d3.select(this).style('font-size', `${width / 29}px`);
         })
 
   } else if (exists === 'update') {

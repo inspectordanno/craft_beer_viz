@@ -74,14 +74,14 @@ function abvHistogram(beers, exists) {
 
       d3.selectAll('.tick>text')
         .each(function(d,i) {
-          d3.select(this).style('font-size', `${width / 29}`);
+          d3.select(this).style('font-size', `${width / 29}px`);
         })
 
       // text label for the x axis
       svg.append("text")
           .attr("transform", `translate(${(width/2)}, ${height + margin.top * 4})`)
           .style("text-anchor", "middle")
-          .style('font-size', `${width / 20}`)
+          .style('font-size', `${width / 20}px`)
           .attr('fill', 'steelblue')
           .text("Alcohol by Volume");
 
@@ -97,16 +97,16 @@ function abvHistogram(beers, exists) {
           .attr('y', 0 - margin.left * .6)
           .attr('x', 0 - (height/2))
           .style("text-anchor", "middle")
-          .style('font-size', `${width / 20}`)
+          .style('font-size', `${width / 20}px`)
           .text("Frequency");
 
-      svg.append('text')
-          .attr('x', width * .60)
-          .attr('y', height * .02)
-          .attr('fill', 'steelblue')
-          .style('font-style', 'italic')
-          .style('font-size', `${width / 27}`)
-          .text('Histogram of beers by ABV.');
+      // svg.append('text')
+      //     .attr('x', width * .60)
+      //     .attr('y', height * .02)
+      //     .attr('fill', 'steelblue')
+      //     .style('font-style', 'italic')
+      //     .style('font-size', `${width / 27}`)
+      //     .text('Histogram of beers by ABV.');
 
   } else if (exists === 'update') {
 

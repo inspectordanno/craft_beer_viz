@@ -59,13 +59,20 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
     .attr('width', w)
     .attr('height', h)
     .on('click', stopped, true);
+  
+  //background rectangle for legend
+  // svg.append('rect')
+  //   .attr('width', w * .7 )
+  //   .attr('height', h * .3)
+  //   .attr('transform', `translate(${w * .59}, ${h * .053}) scale(${w * .00060})`)
+  //   .attr('fill', '#ededed');
 
   svg.append('g')
     .attr('class', 'legendLinear')
-    .attr('transform', `translate(${w * .60}, ${h * .075}) scale(${w * .00060})`);
+    .attr('transform', `translate(${w * .60}, ${h * .08}) scale(${w * .00060})`)
 
   const legendLinear = legendColor()
-    .title('# of Craft Breweries')
+    .title('Craft Breweries Per State')
     .shapeWidth(80)
     .orient('horizontal')
     .scale(color)
@@ -74,17 +81,16 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
     .labelFormat(d3.format(".0f"))
     .labelAlign('middle');
 
-
   svg.select('.legendLinear')
     .call(legendLinear);
+   
+  d3.selectAll('.swatch')
+      .attr('stroke', 'black')
+      .attr('stroke-width', 1);
   
-  // svg.append('rect')
-  //   .attr('class', 'background')
-  //   .attr('width', w)
-  //   .attr('height', h)
-  //   .attr('fill', 'white')
-  //   .on('click', reset);
-
+  // const legendWidth = document.querySelector('.legendLinear').clientWidth;
+  // const legendHeight = document.querySelector('.legendLinear').clientHeight;  
+  // console.log(legendWidth);    
 
   const g = svg.append('g')
     .attr('id', 'gMap');
@@ -302,7 +308,7 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
           .call(zoom.transform, d3.zoomIdentity);
 
       d3.selectAll('.state_selected')
-        .html('United States')
+        .html('the United States')
         .style('color', 'var(--black)');
 
       d3.select('#breweries')

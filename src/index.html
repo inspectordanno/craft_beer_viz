@@ -15,30 +15,38 @@
             <div class="item select_state"> 
               1. Click on a state.
               <span>
-              State selected: <span class="state_selected">United States</span>
+              State selected: <span class="state_selected">the United States</span>
               </span>
             </div>
             <!-- <div class="item current_state"></div> -->
             <div class="item select_city">2. Hover over a city. 
-              <span class="city_selected">
                   <svg width="25px" height="25px">
                       <circle cx="50%" cy="60%" r="10" style="fill:var(--city_yellow); stroke: black; stroke-width: 0.25; opacity: 0.75;"></circle>
                   </svg>
-              </span>
+                  <br>
+              <div>
+                Bigger circles represent cities with more breweries.
+              </div>
             </div>
         </div>
           <div class="item map"></div>
     </div>
 
     <div class="plot_container">
-      <div class="item scatter_info">Each piont represents a <span class="state_selected">United States</span> beer. Hover over each one to learn more.</div>
+      <div class="item scatter_info">
+        <div class="scatter_text">
+        Each point represents a beer from
+        <span class="state_selected"> the United States</span>. 
+        Hover over each one to learn more.
+        </div>
+      </div>
       <div class="item scatterplot"></div>
     </div>
 
     <div class="histograms">
-      <div class="item abv_info">Average alcohol by volume of all beers in <span class="state_selected">United States</span></div>
+      <div class="item abv_info">Average alcohol by volume of all beers in <span class="state_selected">the United States</span></div>
       <div class="item abv"></div>
-      <div class="item ibu_info">Average IBU (bitterness) of all beers in <span class="state_selected">United States</span></div>
+      <div class="item ibu_info">Average IBU (bitterness) of all beers in <span class="state_selected">the United States</span>.</div>
       <div class="item ibu"></div>
     </div>
     

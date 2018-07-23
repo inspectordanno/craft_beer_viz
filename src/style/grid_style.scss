@@ -46,8 +46,13 @@
       font-size: 16px;
     }
 
+    .select_city div {
+      padding-top: 10px;
+      font-size: 12px;
+    }
+
     .select_city {
-      display: inline;
+      display: block;
     }
 
     //the actual map
@@ -71,9 +76,10 @@
 
     .scatter_info {
       grid-area: scatter_info;
-      font-size: 2rem;
+      font-size: 1.75rem;
       /* min-height: 100px; */
       background: var(--blue);
+      // display: inline;
     }
   
     .scatterplot {
@@ -97,7 +103,7 @@
 
     .abv_info {
       grid-area: abv_info;
-      font-size: 2rem;
+      font-size: 1.75rem;
       display: inline;
       text-align: center;
     }
@@ -108,7 +114,7 @@
 
     .ibu_info {
       grid-area: ibu_info;
-      font-size: 2rem;
+      font-size: 1.75rem;
       background: var(--pink);
       display: inline;
       text-align: center;
