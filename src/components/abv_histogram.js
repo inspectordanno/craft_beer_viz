@@ -62,7 +62,7 @@ function abvHistogram(beers, exists) {
       .attr('height', d => {
         return height - y(d.length);
       })
-      .attr('fill', 'steelblue');
+      .attr('fill', 'var(--abv_blue)');
 
       //add x axis
       svg.append('g') //appends a new g element

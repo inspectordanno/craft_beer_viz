@@ -67,8 +67,10 @@ function scatterplot(beers, exists) {
       .attr('cy', d => {
         return y(d.ibu);
       })
-      .attr('r', 2)
-      .attr('fill', '#b4a546');
+      .attr('r', 5)
+      .attr('stroke', 'black')
+      .attr('stroke-width', 1)
+      .attr('fill', 'var(--beer_brown)');
 
       //Create X axis
       svg.append("g")
@@ -80,7 +82,7 @@ function scatterplot(beers, exists) {
       svg.append("text")
         .attr("transform", `translate(${(width/2)}, ${height + margin.top * 4})`)
         .style("text-anchor", "middle")
-        .style('font-size', `${width / 20}`)
+        .style('font-size', `${width / 35}px`)
         .attr('fill', 'steelblue')
         .text("Alcohol by Volume");
 
@@ -91,7 +93,7 @@ function scatterplot(beers, exists) {
           .attr('x', 0 - (height/2))
           .attr('fill', '#b44663')
           .style("text-anchor", "middle")
-          .style('font-size', `${width / 20}`)
+          .style('font-size', `${width / 35}px`)
           .text("IBU")
 
       //Create Y axis
@@ -100,17 +102,17 @@ function scatterplot(beers, exists) {
         .call(yAxis);
 
       svg.append('text')
-          .attr('x', width * .66)
+          .attr('x', width * .75)
           .attr('y', height * .02)
-          .attr('fill', '#b4a546')
+          .attr('fill', 'var(--beer_brown)')
           .style('font-style', 'italic')
           .style('font-size', '80%')
-          .style('font-size', `${width / 27}`)
-          .text('Each point is one beer.');
+          .style('font-size', `${width / 35}px`)
+          .text('Hover over a beer!');
 
       d3.selectAll('.tick>text')
         .each(function(d,i) {
-          d3.select(this).style('font-size', `${width / 29}`);
+          d3.select(this).style('font-size', `${width / 35}`);
         })
 
     } else if (exists === 'update') {
@@ -142,8 +144,10 @@ function scatterplot(beers, exists) {
         .attr('cy', d => {
           return y(d.ibu);
         })
-        .attr('r', 2)
-        .attr('fill', '#b4a546');
+        .attr('r', 5)
+        .attr('stroke', 'black')
+        .attr('stroke-width', 1)
+        .attr('fill', 'var(--beer_brown)');
 
 
         selection.exit()

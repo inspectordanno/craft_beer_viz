@@ -91,7 +91,7 @@ function ibuHistogram(beers, exists) {
           .attr("transform", `translate(${(width/2)}, ${height + margin.top * 4})`)
           .style("text-anchor", "middle")
           .style('font-size', `${width / 20}px`)
-          .attr('fill', '#b44663')
+          .attr('fill', 'var(--ibu_red)')
           .text("IBU");
 
       //add y axis
