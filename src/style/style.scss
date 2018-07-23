@@ -10,12 +10,15 @@
   Let's go through the important bits real quick
 */
 :root {
-  --yellow: #ffc600;
+  --yellow: #ffffbf;
   --black: #272727;
-  --green: #73ff00;
-  --pink: #ff0073;
-  --purple: #8c00ff;
-  --blue: #00e6ff;
+  --green: #bfffbf;
+  --pink: #ffbfff;
+  --purple: #bfbfff;
+  --blue: #bfffff;
+  --bright_red: #f93d66;
+  --bright_purple: #6d47d9;
+
 
 
 }
@@ -45,7 +48,7 @@ html {
 
 body {
   background-image: url("../images/topography.svg"),
-    linear-gradient(110deg, #f93d66, #6d47d9);
+    linear-gradient(110deg, var(--bright_red), var(--bright_purple));
   background-size: 340px, auto;
   min-height: calc(100vh - 100px);
   margin: 50px;

@@ -1,3 +1,5 @@
+//import d3 and d3-svg-legend generator
+
 import * as d3 from 'd3';
 import {legendColor} from 'd3-svg-legend';
 
@@ -36,7 +38,7 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
 
   const projection = d3.geoAlbersUsa()
     .translate([w/2, h/2])
-    .scale(w);
+    .scale(w * 1.25);
 
   const zoom = d3.zoom()
     .scaleExtent([1,8])
@@ -60,45 +62,58 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
 
   svg.append('g')
     .attr('class', 'legendLinear')
-    .attr('transform', `translate(${w * .82}, ${h * .65}) scale(${w * .001})`);
+    .attr('transform', `translate(${w * .60}, ${h * .075}) scale(${w * .00060})`);
 
   const legendLinear = legendColor()
     .title('# of Craft Breweries')
-    .shapeWidth(50)
-    .orient('vertical')
+    .shapeWidth(80)
+    .orient('horizontal')
     .scale(color)
-    .labelFormat(d3.format(".0f"));
+    .shapePadding(10)
+    .labelOffset(30)
+    .labelFormat(d3.format(".0f"))
+    .labelAlign('middle');
+
 
   svg.select('.legendLinear')
     .call(legendLinear);
-
-  svg.append('rect')
-    .attr('class', 'background')
-    .attr('width', w)
-    .attr('height', h)
-    .attr('fill', 'white')
-    .on('click', reset);
+  
+  // svg.append('rect')
+  //   .attr('class', 'background')
+  //   .attr('width', w)
+  //   .attr('height', h)
+  //   .attr('fill', 'white')
+  //   .on('click', reset);
 
 
   const g = svg.append('g')
     .attr('id', 'gMap');
 
-  g.selectAll('path') //this creates the chloropleth
+  const cholorpleth = g.selectAll('path') //this creates the chloropleth
     .data(json.features)
     .enter()
     .append('path')
     .attr('d', path)
     .attr('class', 'feature')
+    .attr('stroke-width', 0.25)
+    .attr('stroke', 'gray' )
     .attr('id', d => d.properties.name)
-    .on('click', clicked)
-    .style('fill', d => {
-      const value = d.properties.value;
-      if (value) {
-        return color(value); // if value exists
-      } else {
-        return '#ccc'; //if value is undefined
-      }
-    });
+    .on('click', clicked);
+
+    //this sets the fill of the states to the color scaled green value
+    function colorStates() {
+      cholorpleth.style('fill', d => {
+        const value = d.properties.value;
+        if (value) {
+          return color(value); // if value exists
+        } else {
+          return '#ccc'; //if value is undefined
+        }
+      });
+    } 
+
+    //returns states to cholorpleth color
+    colorStates();
 
     //this section of the commented out code maps the breweries via lat and long values to the map. I couldn't get it to work with the zooming
     //this is something I can work on in the future
@@ -207,6 +222,13 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
   //zooming behavior https://bl.ocks.org/iamkevinv/0a24e9126cd2fa6b283c6f2d774b69a2
 
     function clicked(d) {
+
+      //returns state to cholorpleth color
+      colorStates();
+
+      //hide legend
+      d3.select('.legendLinear').style('display', 'none');
+
       beers = prefilteredBeers; //when clicked, i reset the filtered variables to the prefiltered ones
       breweries = prefilteredBreweries;
       if (active.node() === this) return reset();
@@ -234,14 +256,20 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
       console.log(breweries);
       console.log(breweries.length);
 
-      d3.select('#state')
-        .html(activeState);
+      //fills in the state that is selected
+      d3.selectAll('.state_selected')
+        .html(activeState)
+        .style('color', 'var(--bright_red)');
 
       d3.select('#breweries')
         .html(breweries.length);
 
       d3.select('#beers')
         .html(beers.length);
+      
+      //changes color of state to bright red
+      d3.select('.active')
+        .style('fill', 'var(--bright_red');
 
       const bounds = path.bounds(d),
           dx = bounds[1][0] - bounds[0][0],
@@ -261,6 +289,12 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
     }
 
     function reset() {
+      //returns states to cholorpleth color
+      colorStates();
+
+      //show legend
+      d3.select('.legendLinear').style('display', 'block');
+
       active.classed("active", false);
       active = d3.select(null);
       beers = prefilteredBeers; //the reset function resets the variables back to unfiltered
@@ -270,8 +304,9 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
           .duration(750)
           .call(zoom.transform, d3.zoomIdentity);
 
-      d3.select('#state')
-        .html('U.S.');
+      d3.selectAll('.state_selected')
+        .html('United States')
+        .style('color', 'var(--black)');
 
       d3.select('#breweries')
         .html(breweries.length)

@@ -12,9 +12,14 @@
 
     <div class="map_container">
         <div class="item map_info">
-            <div class="item select_state"> 1. Click on a state. </div>
-            <div class="item current_state">State selected: Mississippi</div>
-            <div class="item select_brewery">2. Hover over a brewery.</div>
+            <div class="item select_state"> 
+              1. Click on a state.
+              <span>
+              State selected: <span class="state_selected">United States</span>
+              </span>
+            </div>
+            <!-- <div class="item current_state"></div> -->
+            <div class="item select_brewery">2. Hover over a city.</div>
         </div>
           <div class="item map"></div>
     </div>
@@ -25,9 +30,9 @@
     </div>
 
     <div class="histograms">
-      <div class="item abv_info">Average alcohol by volume of all beers in Mississippi</div>
+      <div class="item abv_info">Average alcohol by volume of all beers in <span class="state_selected">United States</span></div>
       <div class="item abv"></div>
-      <div class="item ibu_info">Average IBU (bitterness) of all beers in Mississippi</div>
+      <div class="item ibu_info">Average IBU (bitterness) of all beers in <span class="state_selected">United States</span></div>
       <div class="item ibu"></div>
     </div>
     
