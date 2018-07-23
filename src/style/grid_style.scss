@@ -4,7 +4,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr; //2 columns of equal width
       grid-template-rows: 8fr 8fr; /* 3 rows */
-      grid-gap: 20px;
+      grid-gap: 10px;
       grid-template-areas: 
       "map_container map_container histograms"
       "plot_container plot_container plot_container";
@@ -16,7 +16,7 @@
     .map_container {
       grid-area: map_container;
       display: grid;
-      grid-gap: 20px;
+      grid-gap: 10px;
       grid-template-rows: .5fr 5fr;
       grid-template-areas:
       "map_info"
@@ -46,6 +46,10 @@
       font-size: 16px;
     }
 
+    .select_city {
+      display: inline;
+    }
+
     //the actual map
 
     .map {
@@ -58,7 +62,7 @@
     .plot_container {
       grid-area: plot_container;
       display: grid;
-      grid-gap: 20px;
+      grid-gap: 10px;
       grid-template-rows: 1fr 10fr;
       grid-template-areas: 
       "scatter_info"
@@ -82,7 +86,7 @@
     .histograms {
       grid-area: histograms;
       display: grid;
-      grid-gap: 20px;
+      grid-gap: 10px;
       grid-template-rows: 1fr 10fr 1fr 10fr;
       grid-template-areas:
       "abv_info"

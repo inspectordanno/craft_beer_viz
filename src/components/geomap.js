@@ -115,12 +115,9 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
     //returns states to cholorpleth color
     colorStates();
 
-    //this section of the commented out code maps the breweries via lat and long values to the map. I couldn't get it to work with the zooming
-    //this is something I can work on in the future
-
     const radiusScale = d3.scaleLinear()
       .domain([d3.min(breweriesPerCityValues), d3.max(breweriesPerCityValues)])
-      .range([.5, 5]);
+      .range([1, 10]);
 
       //can't figure out how to get circles to behave with zoom
 
@@ -137,8 +134,8 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
       .attr('r', d => {
         return radiusScale(d.value);
       })
-      .style('fill', 'yellow')
-      .style('stroke', 'gray')
+      .style('fill', 'var(--city_yellow)')
+      .style('stroke', 'black')
       .style('stroke-width', .25)
       .style('opacity', .75)
       .on('mouseover', function() {
@@ -269,7 +266,7 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
       
       //changes color of state to bright red
       d3.select('.active')
-        .style('fill', 'var(--bright_red');
+        .style('fill', 'var(--state_red');
 
       const bounds = path.bounds(d),
           dx = bounds[1][0] - bounds[0][0],
