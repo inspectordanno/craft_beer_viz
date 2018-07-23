@@ -102,7 +102,7 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
     .attr('d', path)
     .attr('class', 'feature')
     .attr('stroke-width', 0.25)
-    .attr('stroke', 'gray' )
+    .attr('stroke', 'var(--black)' )
     .attr('id', d => d.properties.name)
     .on('click', clicked);
 

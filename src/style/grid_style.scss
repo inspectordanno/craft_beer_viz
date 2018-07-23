@@ -31,13 +31,13 @@
       min-height: 100px;
       /* font-size: 10px; */
       justify-items: center;
-      background: var(--green);
+      background: var(--gray);
 
       div {
         border: none;
         font-size: 2rem;
         text-align: center;
-        background: var(--green);
+        background: var(--gray);
       }
     }
 
@@ -59,7 +59,7 @@
 
     .map {
       grid-area: map;
-      background: var(--green);
+      background: var(--gray);
     }
 
     //scatterplot styles
@@ -115,14 +115,14 @@
     .ibu_info {
       grid-area: ibu_info;
       font-size: 1.75rem;
-      background: var(--pink);
+      background: var(--green);
       display: inline;
       text-align: center;
     }
 
     .ibu {
       grid-area: ibu;
-      background: var(--pink);
+      background: var(--green);
     }
 
     @media (max-width: 1500px) {
