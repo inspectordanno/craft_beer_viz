@@ -170,22 +170,15 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
 
           console.log(circleCx - translateX);
 
-          // console.log(d3.select(this).attr('cx'));
-
-          d3.select('#brewery_tooltip')
-            .classed('hidden', false)
-            .style('left', circleCx - translateX + 'px')
-            .style('top', circleCy - translateY + 'px')
-            //take the cx and cy of the circle, and adjust it based on the transform properties
-
           //foreign object tooltip  
          
           const fo = g.append('foreignObject')
             .attr('class', 'svg_tooltip')
             .attr('x', circleCx)
             .attr('y', circleCy)
-            .attr('width', '2px')
-            .attr('height', '2px')
+            .attr('width', '300px')
+            .attr('height', '300px')
+         
           
           const div = fo.append('xhtml:div')
             .append('div')
@@ -194,14 +187,11 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
           
           div.append('p')
             .html('Holmes was certainly not a difficult man to live with.')
-            .style('font-size', '2px');
+            .style('font-size', `${14 / translateScale * 3}px`);
 
         }
       })
-      .on('mouseout', function() {
-        d3.select('#brewery_tooltip')
-          .classed('hidden', true);
-        
+      .on('mouseout', function() {    
         d3.selectAll('.svg_tooltip')
           .remove();
       })
