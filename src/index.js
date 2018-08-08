@@ -65,6 +65,8 @@ Promise.all(promises).then(data => { //here, I am combining the two arrays in th
         if (d.key === dd.c_d) {
           d.long = dd.Longitude;
           d.lat = dd.Latitude;
+          d.city = dd.City;
+          d.state = dd.state;
         }
       });
     });

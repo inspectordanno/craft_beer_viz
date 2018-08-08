@@ -1,14 +1,6 @@
-//Based stylesheet sourced from Wes Bos's css grid course
-//http://cssgrid.io
 
+//color variables
 
-/*
-  Oh Hello!
-
-  These are some base styles so that our tutorial looks good.
-
-  Let's go through the important bits real quick
-*/
 :root {
   --yellow: #ffffbf;
   --black: #272727;
@@ -84,3 +76,8 @@ h6 {
 .item p {
   margin: 0 0 5px 0;
 }
+
+path {
+  cursor: pointer;
+}
+

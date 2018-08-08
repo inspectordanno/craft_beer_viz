@@ -9,6 +9,10 @@ import abvHistogram from './abv_histogram';
 import ibuHistogram from './ibu_histogram';
 import scatterplot from './scatterplot';
 
+//import tooltip
+
+import('../style/tooltip.scss'); 
+
 //consulted this example
 //https://bl.ocks.org/iamkevinv/0a24e9126cd2fa6b283c6f2d774b69a2
 
@@ -144,7 +148,8 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
       .style('stroke', 'black')
       .style('stroke-width', .25)
       .style('opacity', .75)
-      .on('mouseover', function() {
+      .on('mouseenter', function(d) {
+        console.log(d);
         console.log(active.size());;
 
         if (active.size() == 1) {
@@ -161,43 +166,45 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
           const circleCx = parseFloat(d3.select(this).attr('cx'));
           const circleCy = parseFloat(d3.select(this).attr('cy'));
 
+          // newCx = prevCx * scale + translateX
+          //const untransformedCx = (circleCx - translateX) / translateScale;
+          //const untransformedCy = (circleCy - translateY) / translateScale;
+          const transformedCx = translateScale * circleCx + translateX;
+          const transformedCy = translateScale * circleCy + translateY;
+
           console.log(transformValueString);
-          console.log('cx:',circleCx);
-          console.log('cy:',circleCy);
+          console.log('cx:',circleCx, transformedCx);
+          console.log('cy:',circleCy, transformedCy);
           console.log('translateX:',translateX);
           console.log('translateY:',translateY);
           console.log('translateScale:',translateScale);
 
           console.log(circleCx - translateX);
 
-          //foreign object tooltip  
+          let div = d3.select('.map')
+          .append('div')
+          .attr('class', 'tooltip')
+          .style('left', `${transformedCx}px`)
+          .style('top', `${transformedCy}px`);
          
-          const fo = g.append('foreignObject')
-            .attr('class', 'svg_tooltip')
-            .attr('x', circleCx)
-            .attr('y', circleCy)
-            .attr('width', '300px')
-            .attr('height', '300px')
-         
-          
-          const div = fo.append('xhtml:div')
-            .append('div')
-            // .style('padding', '10px')
-            .style('background-color', 'gray');
-          
           div.append('p')
-            .html('Holmes was certainly not a difficult man to live with.')
-            .style('font-size', `${14 / translateScale * 3}px`);
+            .html(d.city +','+ d.state);
+          
+          if (d.value === 1) {
+            div.append('p')
+              .html(`${d.value} brewery`)
+          } else if (d.value > 1) {
+            div.append('p')
+              .html(`${d.value} breweries`)
+          }         
 
         }
       })
-      .on('mouseout', function() {    
-        d3.selectAll('.svg_tooltip')
+      .on('mouseout', () => {    
+        d3.selectAll('.tooltip')
           .remove();
       })
       
-     
-
   //first, I save the beers and breweries to prefiltered variables. //This gets displayed to the initalized state.
 
   const prefilteredBeers = beers;
