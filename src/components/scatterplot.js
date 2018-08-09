@@ -106,14 +106,8 @@ function scatterplot(beers, exists) {
           .attr('y', height * .02)
           .attr('fill', 'var(--beer_brown)')
           .style('font-style', 'italic')
-          .style('font-size', '80%')
           .style('font-size', `${width / 35}px`)
           .text('Hover over a beer!');
-
-      d3.selectAll('.tick>text')
-        .each(function(d,i) {
-          d3.select(this).style('font-size', `${width / 35}`);
-        })
 
     } else if (exists === 'update') {
 

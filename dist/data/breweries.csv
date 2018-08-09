@@ -236,7 +236,7 @@ id,name,city,state,Latitude,Longitude,C_D,Street number,Street,City,State,Countr
 446,Downeast Cider House,Leominster, MA,42.5250906,-71.759794,Leominster  MA,,,Leominster,Massachusetts,United States,,"Leominster, Worcester County, Massachusetts, United States",,,,,,,,LeominsterMA
 103,Beer Works Brewery,Lowell, MA,42.6334247,-71.3161718,Lowell  MA,,,Lowell,Massachusetts,United States,,"Lowell, Middlesex County, Massachusetts, United States",,,,,,,,LowellMA
 511,Sherwood Forest Brewers,Marlborough, MA,42.3459271,-71.5522874,Marlborough  MA,,,Marlborough,Massachusetts,United States,,"Marlborough, Middlesex County, Massachusetts, United States",,,,,,,,MarlboroughMA
-145,Cisco Brewers,Nantucket, MA,41.2834704,-70.099451,Nantucket  MA,,,,Massachusetts,United States,,"Nantucket, Nantucket County, Massachusetts, United States",,,,,,,,NantucketMA
+145,Cisco Brewers,Nantucket, MA,41.2834704,-70.099451,Nantucket  MA,,,Nantucket,Massachusetts,United States,,"Nantucket, Nantucket County, Massachusetts, United States",,,,,,,,NantucketMA
 495,Newburyport Brewing Company,Newburyport, MA,42.8125913,-70.8772751,Newburyport  MA,,,Newburyport,Massachusetts,United States,,"Newburyport, Essex County, Massachusetts, United States",,,,,,,,NewburyportMA
 293,Northampton Brewery,Northamtpon, MA,42.3250896,-72.6412013,Northamtpon  MA,,,Northampton,Massachusetts,United States,,"Northampton, Hampshire County, Massachusetts, United States",,,,,,,,NorthamtponMA
 477,Big Elm Brewing,Sheffield, MA,42.1099885,-73.3551436,Sheffield  MA,,,Sheffield,Massachusetts,United States,,"Sheffield, Berkshire County, Massachusetts, United States",,,,,,,,SheffieldMA

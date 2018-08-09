@@ -80,6 +80,7 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
     .shapeWidth(80)
     .orient('horizontal')
     .scale(color)
+    .cells([1, 10, 20, 30, 40])
     .shapePadding(10)
     .labelOffset(30)
     .labelFormat(d3.format(".0f"))
@@ -188,16 +189,28 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
           .style('top', `${transformedCy}px`);
          
           div.append('p')
-            .html(d.city +','+ d.state);
+            .html(d.city +','+ d.state)
+            .style('font-size', '20px')
+            .style('color', 'var(--city_yellow')
+            .style('-webkit-text-stroke', '.5px black')
+            .style('-moz-text-stroke', '.5px black');
           
           if (d.value === 1) {
             div.append('p')
               .html(`${d.value} brewery`)
+              .style('font-size', '16px');
           } else if (d.value > 1) {
             div.append('p')
               .html(`${d.value} breweries`)
-          }         
-
+              .style('font-size', '16px');
+          }
+        
+          d.breweryList.forEach(function(breweryName) {
+            div.append('p')
+              .html(breweryName)
+              .style('font-size', '12px')
+          });
+        
         }
       })
       .on('mouseout', () => {    

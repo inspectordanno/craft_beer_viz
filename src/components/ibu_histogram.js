@@ -102,7 +102,7 @@ function ibuHistogram(beers, exists) {
       // text label for the y axis
       svg.append("text")
           .attr("transform", "rotate(-90)")
-          .attr('y', 0 - margin.left * .6)
+          .attr('y', 0 - margin.left * .65)
           .attr('x', 0 - (height/2))
           .style("text-anchor", "middle")
           .style('font-size', `${width / 20}px`)
@@ -110,17 +110,17 @@ function ibuHistogram(beers, exists) {
 
       svg.append('text')
           .attr('x', width * .35)
-          .attr('y', height * .0005)
+          .attr('y', height * .05)
           .attr('fill', '#b44663')
           .style('font-style', 'italic')
           .style('font-size', `${width / 27}px`)
           .text('Beers with higher IBU are more bitter.');
 
-      //adjust axis tick labels
+      //adjust axis tick labels - this controls both abv and ibu tick labels!
 
       d3.selectAll('.tick>text')
         .each(function(d,i) {
-          d3.select(this).style('font-size', `${width / 29}px`);
+          d3.select(this).style('font-size', `${width / 35}px`);
         })
 
   } else if (exists === 'update') {

@@ -61,12 +61,14 @@ Promise.all(promises).then(data => { //here, I am combining the two arrays in th
       .entries(breweries);
 
     breweriesPerCity.forEach(d => {
+      d.breweryList = [];
       breweries.forEach(dd => {
         if (d.key === dd.c_d) {
           d.long = dd.Longitude;
           d.lat = dd.Latitude;
-          d.city = dd.City;
+          d.city = dd.city;
           d.state = dd.state;
+          d.breweryList.push(dd.name);
         }
       });
     });
@@ -76,6 +78,8 @@ Promise.all(promises).then(data => { //here, I am combining the two arrays in th
     breweriesPerCity.forEach(d => {
       breweriesPerCityValues.push(d.value);
     })
+
+    console.log(breweriesPerCity);
 
     breweriesPerState.forEach(d => {
       const dataState = d.key;

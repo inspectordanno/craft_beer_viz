@@ -72,10 +72,15 @@ function abvHistogram(beers, exists) {
 
       //adjust axis tick labels
 
+      // d3.selectAll('.tick>text')
+      //   .each(function(d,i) {
+      //     d3.select(this).style('color', 'red');
+      //   })
+      
       d3.selectAll('.tick>text')
-        .each(function(d,i) {
-          d3.select(this).style('font-size', `${width / 29}px`);
-        })
+      .each(function(d,i) {
+        d3.select(this).style('font-size', `${parseInt(width / 50)}px`);
+      })
 
       // text label for the x axis
       svg.append("text")
@@ -94,7 +99,7 @@ function abvHistogram(beers, exists) {
       // text label for the y axis
       svg.append("text")
           .attr("transform", "rotate(-90)")
-          .attr('y', 0 - margin.left * .6)
+          .attr('y', 0 - margin.left * .65)
           .attr('x', 0 - (height/2))
           .style("text-anchor", "middle")
           .style('font-size', `${width / 20}px`)
