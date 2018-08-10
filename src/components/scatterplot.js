@@ -161,13 +161,11 @@ function scatterplot(beers, exists) {
 
     }
 
-    //try to use getBoundingclientrect
-
     d3.selectAll('.beer')
       .on('mouseenter', function() {
         
-        const beerCx = d3.select(this).getBoundingClientRect()
-        const beerCy =  d3.select(this).g
+        const beerCx = d3.select(this).attr('cx');
+        const beerCy =  d3.select(this).attr('cy')
 
         const beerDiv = d3.select('.scatterplot')
           .append('div')
@@ -177,7 +175,10 @@ function scatterplot(beers, exists) {
          
       })
       .on('mouseleave', function() {
-       
+        d3.selectAll('.tooltip')
+          .transition()
+          .style('opacity', 0)
+          .remove();
       })
 }
 

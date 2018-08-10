@@ -240,6 +240,8 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
           .style('fill', 'var(--city_yellow)');
 
           d3.selectAll('.tooltip')
+            .transition()
+            .style('opacity', 0)
             .remove();
         }
       })
