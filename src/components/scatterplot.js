@@ -61,6 +61,7 @@ function scatterplot(beers, exists) {
 
     selection.enter()
       .append('circle')
+      .attr('class', 'beer')
       .attr('cx', d => {
         return x(d.abv);
       })
@@ -84,6 +85,7 @@ function scatterplot(beers, exists) {
         .style("text-anchor", "middle")
         .style('font-size', `${width / 35}px`)
         .attr('fill', 'steelblue')
+        .attr('textLength', 150)
         .text("Alcohol by Volume");
 
       // text label for the y axis
@@ -92,6 +94,7 @@ function scatterplot(beers, exists) {
           .attr('y', 0 - margin.left * .6)
           .attr('x', 0 - (height/2))
           .attr('fill', '#b44663')
+          .attr('textLength', 35)
           .style("text-anchor", "middle")
           .style('font-size', `${width / 35}px`)
           .text("IBU")
@@ -107,7 +110,13 @@ function scatterplot(beers, exists) {
           .attr('fill', 'var(--beer_brown)')
           .style('font-style', 'italic')
           .style('font-size', `${width / 35}px`)
+          .attr('textLength', 150)
           .text('Hover over a beer!');
+      
+          d3.selectAll('.tick>text')
+          .each(function(d,i) {
+            d3.select(this).attr('letter-spacing', .25);
+          })
 
     } else if (exists === 'update') {
 
@@ -131,6 +140,7 @@ function scatterplot(beers, exists) {
 
       selection.enter()
         .append('circle')
+        .attr('class', 'beer')
         .transition(t)
         .attr('cx', d => {
           return x(d.abv);
@@ -150,6 +160,25 @@ function scatterplot(beers, exists) {
           .remove();
 
     }
+
+    //try to use getBoundingclientrect
+
+    d3.selectAll('.beer')
+      .on('mouseenter', function() {
+        
+        const beerCx = d3.select(this).getBoundingClientRect()
+        const beerCy =  d3.select(this).g
+
+        const beerDiv = d3.select('.scatterplot')
+          .append('div')
+          .attr('class', 'tooltip')
+          .style('left', `${beerCx}px`)
+          .style('top', `${beerCy}px`);
+         
+      })
+      .on('mouseleave', function() {
+       
+      })
 }
 
 export default scatterplot;

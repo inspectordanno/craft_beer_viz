@@ -93,6 +93,9 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
       .attr('stroke', 'black')
       .attr('stroke-width', 1);
   
+  d3.select('.legendTitle')
+      .attr('textLength', 450);
+  
   // const legendWidth = document.querySelector('.legendLinear').clientWidth;
   // const legendHeight = document.querySelector('.legendLinear').clientHeight;  
   // console.log(legendWidth);    
@@ -145,13 +148,15 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
       .attr('r', d => {
         return radiusScale(d.value);
       })
+      .attr('class', 'city')
       .style('fill', 'var(--city_yellow)')
       .style('stroke', 'black')
       .style('stroke-width', .25)
       .style('opacity', .75)
       .on('mouseenter', function(d) {
-        console.log(d);
-        console.log(active.size());;
+        console.log(d);      
+
+        //isolating the translate and zoom values from the g
 
         if (active.size() == 1) {
           const transformValueString = g.attr('transform'); //this is the value that that transforms the g when a state is clicked
@@ -182,7 +187,20 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
 
           console.log(circleCx - translateX);
 
-          let div = d3.select('.map')
+          //changing color of circle to purple on hover
+
+          d3.selectAll('circle')
+            .style('fill', 'var(--city_yellow');
+
+          d3.select(this)
+            .transition()
+            .style('fill', 'var(--bright_purple');
+          
+          console.log(d3.select(this));
+
+          //tooltip
+
+          const div = d3.select('.map')
           .append('div')
           .attr('class', 'tooltip')
           .style('left', `${transformedCx}px`)
@@ -213,9 +231,17 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
         
         }
       })
-      .on('mouseout', () => {    
-        d3.selectAll('.tooltip')
-          .remove();
+      .on('mouseleave', function() {    
+
+        if (active.size() === 1) {
+          //changing color of circle to yellow on hover
+          console.log(d3.select(this));
+          d3.selectAll('circle')
+          .style('fill', 'var(--city_yellow)');
+
+          d3.selectAll('.tooltip')
+            .remove();
+        }
       })
       
   //first, I save the beers and breweries to prefiltered variables. //This gets displayed to the initalized state.
@@ -235,6 +261,10 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
   //zooming behavior https://bl.ocks.org/iamkevinv/0a24e9126cd2fa6b283c6f2d774b69a2
 
     function clicked(d) {
+
+      //color all circles yellow
+      d3.selectAll('circle')
+        .style('fill', 'var(--city_yellow');
 
       //returns state to cholorpleth color
       colorStates();
@@ -304,6 +334,8 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
     function reset() {
       //returns states to cholorpleth color
       colorStates();
+
+      //returns all 
 
       //show legend
       d3.select('.legendLinear').style('display', 'block');
