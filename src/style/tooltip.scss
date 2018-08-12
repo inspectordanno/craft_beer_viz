@@ -1,4 +1,6 @@
-.tooltip {
+//tooltip base styling
+
+%tooltip {
   position: absolute;
   width: 150px;
   height: auto;
@@ -11,11 +13,48 @@
   -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
   pointer-events: none;
+  opacity: .95;
 }
 
-.tooltip p {
+%tooltipText {
   margin: 0;
   font-family: sans-serif;
   line-height: 20px;
   text-shadow: none;
+}
+
+//cityTooltip styling
+
+.cityTooltip {
+  @extend %tooltip;
+}
+
+.cityTooltip p {
+  @extend %tooltipText;
+}
+
+//beerTooltip styling
+
+.beerTooltip {
+  @extend %tooltip;
+  width: 250px;
+ 
+}
+
+.beerTooltip p {
+  @extend %tooltipText;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-areas: "attributeName attributeValue";
+  grid-gap: 5px;
+}
+
+.attributeName {
+  grid-area: attributeName;
+  font-size: 10px;
+}
+
+.attributeValue {
+  grid-area: attributeValue;
+  font-size: 14px;
 }

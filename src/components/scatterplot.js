@@ -11,10 +11,12 @@ function scatterplot(beers, exists) {
   let ibuBeers = []; //this is a new array that will only hold beers with that have an IBU data attribute
 
   beers.forEach(d =>{ //if a beer has an ibu field that isn't blank, push it to the ibuBeer array
-    if (d.ibu != "") {
+    if (d.ibu !== "") {
       ibuBeers.push(d);
     }
   });
+
+  console.log(ibuBeers);
 
 //dimensions and margins of plot
   const margin = {
@@ -162,24 +164,50 @@ function scatterplot(beers, exists) {
     }
 
     d3.selectAll('.beer')
-      .on('mouseenter', function() {
-        
-        const beerCx = d3.select(this).attr('cx');
-        const beerCy =  d3.select(this).attr('cy')
+      .on('mouseenter', function(d) {
 
-        const beerDiv = d3.select('.scatterplot')
+        d3.selectAll('.beerTooltip')
+        .transition()
+        .style('opacity', 0)
+        .remove();
+        
+        const beerCx = parseInt(d3.select(this).attr('cx'));
+        const beerCy =  parseInt(d3.select(this).attr('cy'));
+       
+        const beerTooltip = d3.select('.scatterplot')
           .append('div')
-          .attr('class', 'tooltip')
-          .style('left', `${beerCx}px`)
-          .style('top', `${beerCy}px`);
-         
+          .attr('class', 'beerTooltip')
+          .style('left', `${beerCx + 60}px`)
+          .style('top', `${beerCy + 20}px`)
+                    
+        const beerAttribute = (attributeName, attributeValue) => {
+          const tooltipP = beerTooltip.append('p');
+
+          tooltipP.append('span')
+          .html(`${attributeName}: `)
+          .attr('class', 'attributeName');
+
+          tooltipP.append('span')
+          .html(attributeValue)
+          .attr('class', 'attributeValue');        
+        }
+
+        beerAttribute('Name', d.name);
+        beerAttribute('Style', d.style);
+        beerAttribute('Brewery', d.brewery_name);
+        beerAttribute('Location', [d.brewery_city, ' ' + d.brewery_state]);
+        beerAttribute('Ounces', d.ounces);
+        beerAttribute('ABV', (d.abv * 100).toFixed(1) + ' %'); //rounds to percentage with 1 decimal place
+        beerAttribute("IBU", d.ibu);
+        
+                
       })
-      .on('mouseleave', function() {
-        d3.selectAll('.tooltip')
-          .transition()
-          .style('opacity', 0)
-          .remove();
-      })
+      // .on('mouseleave', function() {
+      //   d3.selectAll('.beerTooltip')
+      //     .transition()
+      //     .style('opacity', 0)
+      //     .remove();
+      // })
 }
 
 export default scatterplot;

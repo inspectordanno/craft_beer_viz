@@ -205,7 +205,7 @@ id,name,city,state,Latitude,Longitude,C_D,Street number,Street,City,State,Countr
 533,Abita Brewing Company,Abita Springs, LA,30.4785257,-90.0375755,Abita Springs  LA,,,Abita Springs,Louisiana,United States,70420,"Abita Springs, St. Tammany Parish, Louisiana, United States, 70420",,,,,,,,AbitaSpringsLA
 152,Tin Roof Brewing Company,Baton Rouge, LA,30.4514677,-91.1871466,Baton Rouge  LA,,,Baton Rouge,Louisiana,United States,,"Baton Rouge, East Baton Rouge Parish, Louisiana, United States",,,,,,,,BatonRougeLA
 553,Covington Brewhouse,Covington, LA,30.4754702,-90.1009108,Covington  LA,,,Covington,Louisiana,United States,,"Covington, St. Tammany Parish, Louisiana, United States",,,,,,,,CovingtonLA
-174,New Orleans Lager & Ale Brewing ...,New Orleans, LA,29.9510658,-90.0715323,New Orleans  LA,,,New Orleans,Louisiana,United States,,"New Orleans, Orleans Parish, Louisiana, United States",,,,,,,,NewOrleansLA
+174,New Orleans Lager & Ale Brewing Company,New Orleans, LA,29.9510658,-90.0715323,New Orleans  LA,,,New Orleans,Louisiana,United States,,"New Orleans, Orleans Parish, Louisiana, United States",,,,,,,,NewOrleansLA
 269,Great Raft Brewing Company,Shreveport, LA,32.5251516,-93.7501789,Shreveport  LA,,,Shreveport,Louisiana,United States,,"Shreveport, Caddo Parish, Louisiana, United States",,,,,,,,ShreveportLA
 317,Marshall Wharf Brewing Company,Belfast, ME,44.4259092,-69.0064234,Belfast  ME,,,Belfast,Maine,United States,4915,"Belfast, Waldo County, Maine, United States, 04915",,,,,,,,BelfastME
 292,Baxter Brewing Company,Lewiston, ME,44.100351,-70.2147764,Lewiston  ME,,,Lewiston,Maine,United States,,"Lewiston, Androscoggin County, Maine, United States",,,,,,,,LewistonME
@@ -222,7 +222,7 @@ id,name,city,state,Latitude,Longitude,C_D,Street number,Street,City,State,Countr
 521,Flying Dog Brewery,Frederick, MD,39.4142688,-77.4105409,Frederick  MD,,,Frederick,Maryland,United States,,"Frederick, 2, Frederick, Frederick County, Maryland, United States",,,,,,,,FrederickMD
 479,Heavy Seas Beer,Halethorpe, MD,39.2401735,-76.6806441,Halethorpe  MD,,,Halethorpe,Maryland,United States,21227,"Halethorpe, 13, Baltimore County, Maryland, United States, 21227",,,,,,,,HalethorpeMD
 114,Jailbreak Brewing Company,Laurel, MD,39.0992752,-76.8483061,Laurel  MD,,,Laurel,Maryland,United States,,"Laurel, 10, Laurel, Prince George's County, Maryland, United States",,,,,,,,LaurelMD
-68,Red Shedman Farm Brewery and Hop...,Mt. Airy, MD,39.3762145,-77.154704,Mt. Airy  MD,,,Mount Airy,Maryland,United States,21771,"Mount Airy, Carroll County, Maryland, United States, 21771",,,,,,,,Mt.AiryMD
+68,Red Shedman Farm Brewery and Hop Yard,Mt. Airy, MD,39.3762145,-77.154704,Mt. Airy  MD,,,Mount Airy,Maryland,United States,21771,"Mount Airy, Carroll County, Maryland, United States, 21771",,,,,,,,Mt.AiryMD
 234,Harpoon Brewery,Boston, MA,42.3600825,-71.0588801,Boston  MA,,,Boston,Massachusetts,United States,,"Boston, Suffolk County, Massachusetts, United States",,,,,,,,BostonMA
 300,Boston Beer Company,Boston, MA,42.3600825,-71.0588801,Boston  MA,,,Boston,Massachusetts,United States,,"Boston, Suffolk County, Massachusetts, United States",,,,,,,,BostonMA
 178,Cambridge Brewing Company,Cambridge, MA,42.3736158,-71.1097335,Cambridge  MA,,,Cambridge,Massachusetts,United States,,"Cambridge, Middlesex County, Massachusetts, United States",,,,,,,,CambridgeMA
@@ -290,7 +290,7 @@ id,name,city,state,Latitude,Longitude,C_D,Street number,Street,City,State,Countr
 58,Summit Brewing Company,St. Paul, MN,44.9537029,-93.0899578,St. Paul  MN,,,Saint Paul,Minnesota,United States,,"Saint Paul, Ramsey County, Minnesota, United States",,,,,,,,St.PaulMN
 244,Lift Bridge Brewing Company,Stillwater, MN,45.056004,-92.8088443,Stillwater  MN,,,Stillwater,Minnesota,United States,55082,"Stillwater, Washington County, Minnesota, United States, 55082",,,,,,,,StillwaterMN
 444,Big Wood Brewery,Vadnais Heights, MN,45.0574658,-93.0738305,Vadnais Heights  MN,,,Vadnais Heights,Minnesota,United States,,"Vadnais Heights, White Bear Township, Ramsey County, Minnesota, United States",,,,,,,,VadnaisHeightsMN
-133,Southern Prohibition Brewing Com...,Hattiesburg, MS,31.3271189,-89.2903392,Hattiesburg  MS,,,Hattiesburg,Mississippi,United States,,"Hattiesburg, Forrest County, Mississippi, United States",,,,,,,,HattiesburgMS
+133,Southern Prohibition Brewing Company,Hattiesburg, MS,31.3271189,-89.2903392,Hattiesburg  MS,,,Hattiesburg,Mississippi,United States,,"Hattiesburg, Forrest County, Mississippi, United States",,,,,,,,HattiesburgMS
 245,Lucky Town Brewing Company,Jackson, MS,32.2987573,-90.1848103,Jackson  MS,,,Jackson,Mississippi,United States,,"Jackson, Hinds County, Mississippi, United States",,,,,,,,JacksonMS
 314,Piney River Brewing Company,Bucryus, MO,37.3442143,-92.0168233,Bucryus  MO,,,Bucyrus,Missouri,United States,65444,"Bucyrus, Piney Township, Texas County, Missouri, United States, 65444",,,,,,,,BucryusMO
 31,Boulevard Brewing Company,Kansas City, MO,39.0997265,-94.5785667,Kansas City  MO,,,Kansas City,Missouri,United States,,"Kansas City, Jackson County, Missouri, United States",,,,,,,,KansasCityMO
@@ -319,7 +319,7 @@ id,name,city,state,Latitude,Longitude,C_D,Street number,Street,City,State,Countr
 530,Buckbean Brewing Company,Reno, NV,39.5296329,-119.8138027,Reno  NV,,,Reno,Nevada,United States,,"Reno, Washoe County, Nevada, United States",,,,,,,,RenoNV
 109,Woodstock Inn,North Woodstock, NH,44.0324305,-71.6869123,Woodstock  NH,135,Main Street,Woodstock,New Hampshire,United States,3262,"135, Main Street, North Woodstock, Woodstock, Grafton County, New Hampshire, United States, 03262",,,,,,,,WoodstockNH
 47,White Birch Brewing,Hooksett, NH,43.0967213,-71.4651283,Hooksett  NH,,,Hooksett,New Hampshire,United States,,"Hooksett, Hooksett, Merrimack County, New Hampshire, United States",,,,,,,,HooksettNH
-547,Moat Mountain Smoke House & Brew...,North Conway, NH,44.0536805,-71.1284041,North Conway  NH,,,Conway,New Hampshire,United States,,"North Conway, Conway, Conway, Carroll County, New Hampshire, United States",,,,,,,,NorthConwayNH
+547,Moat Mountain Smoke House & Brewery,North Conway, NH,44.0536805,-71.1284041,North Conway  NH,,,Conway,New Hampshire,United States,,"North Conway, Conway, Conway, Carroll County, New Hampshire, United States",,,,,,,,NorthConwayNH
 222,Carton Brewing Company,Atlantic Highlands, NJ,40.4078864,-74.034306,Atlantic Highlands  NJ,,,Atlantic Highlands,New Jersey,United States,,"Atlantic Highlands, Monmouth County, New Jersey, United States",,,,,,,,AtlanticHighlandsNJ
 217,Forgotten Boardwalk,Cherry Hill, NJ,39.926813,-75.0246312,Cherry Hill  NJ,,,Cherry Hill,New Jersey,United States,,"Cherry Hill, Camden County, New Jersey, United States",,,,,,,,CherryHillNJ
 281,Bolero Snort Brewery,Ridgefield Park, NJ,40.8570442,-74.0215285,Ridgefield Park  NJ,,,Ridgefield Park,New Jersey,United States,,"Ridgefield Park, Bergen County, New Jersey, United States",,,,,,,,RidgefieldParkNJ
@@ -347,7 +347,7 @@ id,name,city,state,Latitude,Longitude,C_D,Street number,Street,City,State,Countr
 528,Asheville Brewing Company,Asheville, NC,35.5950581,-82.5514869,Asheville  NC,,,Asheville,North Carolina,United States,,"Asheville, Buncombe County, North Carolina, United States",,,,,,,,AshevilleNC
 324,Pisgah Brewing Company,Black Mountain, NC,35.6178951,-82.3212302,Black Mountain  NC,,,Black Mountain,North Carolina,United States,28711,"Black Mountain, Black Mountain, Buncombe County, North Carolina, United States, 28711",,,,,,,,BlackMountainNC
 69,Appalachian Mountain Brewery,Boone, NC,36.216795,-81.6745517,Boone  NC,,,Boone,North Carolina,United States,,"Boone, Watauga County, North Carolina, United States",,,,,,,,BooneNC
-389,Oskar Blues Brewery (North Carol...,Brevard, NC,35.2334472,-82.7342919,Brevard  NC,,,Brevard,North Carolina,United States,,"Brevard, Brevard, Transylvania County, North Carolina, United States",,,,,,,,BrevardNC
+389,Oskar Blues Brewery,Brevard, NC,35.2334472,-82.7342919,Brevard  NC,,,Brevard,North Carolina,United States,,"Brevard, Brevard, Transylvania County, North Carolina, United States",,,,,,,,BrevardNC
 70,Birdsong Brewing Company,Charlotte, NC,35.2270869,-80.8431267,Charlotte  NC,,,Charlotte,North Carolina,United States,,"Charlotte, 1, Charlotte, Mecklenburg County, North Carolina, United States",,,,,,,,CharlotteNC
 359,NoDa Brewing Company,Charlotte, NC,35.2270869,-80.8431267,Charlotte  NC,,,Charlotte,North Carolina,United States,,"Charlotte, 1, Charlotte, Mecklenburg County, North Carolina, United States",,,,,,,,CharlotteNC
 497,Cans Bar and Canteen,Charlotte, NC,35.2270869,-80.8431267,Charlotte  NC,,,Charlotte,North Carolina,United States,,"Charlotte, 1, Charlotte, Mecklenburg County, North Carolina, United States",,,,,,,,CharlotteNC
@@ -378,7 +378,7 @@ id,name,city,state,Latitude,Longitude,C_D,Street number,Street,City,State,Countr
 321,Rivertown Brewing Company,Lockland, OH,39.2292249,-84.4577201,Lockland  OH,,,Lockland,Ohio,United States,45215,"Lockland, Hamilton County, Ohio, United States, 45215",,,,,,,,LocklandOH
 224,Fat Heads Brewery,Middleburg Heights, OH,41.3614401,-81.812912,Middleburg Heights  OH,,,Middleburg Heights,Ohio,United States,,"Middleburg Heights, Cuyahoga County, Ohio, United States",,,,,,,,MiddleburgHeightsOH
 285,Catawba Island Brewing,Port Clinton, OH,41.5119954,-82.9376919,Port Clinton  OH,,,Port Clinton,Ohio,United States,43452,"Port Clinton, Ottawa County, Ohio, United States, 43452",,,,,,,,PortClintonOH
-505,Krebs Brewing Company (Petes Pl...,Krebs, OK,34.9278748,-95.7158221,Krebs  OK,,,Krebs,Oklahoma,United States,74501,"Krebs, Pittsburg County, Oklahoma, United States, 74501",,,,,,,,KrebsOK
+505,Krebs Brewing Company,Krebs, OK,34.9278748,-95.7158221,Krebs  OK,,,Krebs,Oklahoma,United States,74501,"Krebs, Pittsburg County, Oklahoma, United States, 74501",,,,,,,,KrebsOK
 376,RoughTail Brewing Company,Midwest City, OK,35.4495065,-97.3967019,Midwest City  OK,,,Midwest City,Oklahoma,United States,,"Midwest City, Oklahoma County, Oklahoma, United States",,,,,,,,MidwestCityOK
 366,Mustang Brewing Company,Mustang, OK,35.384226,-97.7244867,Mustang  OK,,,Mustang,Oklahoma,United States,73064,"Mustang, Southwest Oklahoma City, Canadian County, Oklahoma, United States, 73064",,,,,,,,MustangOK
 182,COOP Ale Works,Oklahoma City, OK,35.4675602,-97.5164276,Oklahoma City  OK,,,Oklahoma City,Oklahoma,United States,,"Oklahoma City, Oklahoma County, Oklahoma, United States",,,,,,,,OklahomaCityOK
@@ -413,7 +413,7 @@ id,name,city,state,Latitude,Longitude,C_D,Street number,Street,City,State,Countr
 494,Seven Brides Brewery,Silverton, OR,45.0051213,-122.7831455,Silverton  OR,,,Silverton,Oregon,United States,97381,"Silverton, Marion County, Oregon, United States, 97381",,,,,,,,SilvertonOR
 153,Three Creeks Brewing,Sisters, OR,44.2909491,-121.5492119,Sisters  OR,,,Sisters,Oregon,United States,97759,"Sisters, Deschutes County, Oregon, United States, 97759",,,,,,,,SistersOR
 198,Hop Valley Brewing Company,Springfield, OR,44.0462362,-123.0220289,Springfield  OR,,,Springfield,Oregon,United States,,"Springfield, Lane County, Oregon, United States",,,,,,,,SpringfieldOR
-416,Jacks Hard Cider (Hauser Estate...,Biglerville, PA,39.9303715,-77.2480391,Biglerville  PA,,,Biglerville,Pennsylvania,United States,17307,"Biglerville, Adams County, Pennsylvania, United States, 17307",,,,,,,,BiglervillePA
+416,Jacks Hard Cider,Biglerville, PA,39.9303715,-77.2480391,Biglerville  PA,,,Biglerville,Pennsylvania,United States,17307,"Biglerville, Adams County, Pennsylvania, United States, 17307",,,,,,,,BiglervillePA
 372,Spring House Brewing Company,Conestoga, PA,39.9454909,-76.3379045,Conestoga  PA,,,Conestoga,Pennsylvania,United States,17516,"Conestoga, Conestoga Township, Lancaster County, Pennsylvania, United States, 17516",,,,,,,,ConestogaPA
 325,Neshaminy Creek Brewing Company,Croydon, PA,40.0873329,-74.9034996,Croydon  PA,,,Croydon,Pennsylvania,United States,19021,"Croydon, Bristol Township, Bucks County, Pennsylvania, United States, 19021",,,,,,,,CroydonPA
 301,Old Forge Brewing Company,Danville, PA,40.96342,-76.6127329,Danville  PA,,,Danville,Pennsylvania,United States,17821,"Danville, Montour County, Pennsylvania, United States, 17821",,,,,,,,DanvillePA
@@ -453,7 +453,7 @@ id,name,city,state,Latitude,Longitude,C_D,Street number,Street,City,State,Countr
 312,Jackalope Brewing Company,Nashville, TN,36.1626638,-86.7816016,Nashville  TN,,,Nashville,Tennessee,United States,,"Nashville, Davidson County, Tennessee, United States",,,,,,,,NashvilleTN
 463,Big Bend Brewing Company,Alpine, TX,30.3584919,-103.6610115,Alpine  TX,,,Alpine,Texas,United States,,"Alpine, Brewster County, Texas, United States",,,,,,,,AlpineTX
 77,Blue Owl Brewing,Austin, TX,30.267153,-97.7430608,Austin  TX,,,Austin,Texas,United States,,"Austin, Travis County, Texas, United States",,,,,,,,AustinTX
-126,Uncle Billys Brewery and Smokeh...,Austin, TX,30.267153,-97.7430608,Austin  TX,,,Austin,Texas,United States,,"Austin, Travis County, Texas, United States",,,,,,,,AustinTX
+126,Uncle Billys Brewery and Smokehouse,Austin, TX,30.267153,-97.7430608,Austin  TX,,,Austin,Texas,United States,,"Austin, Travis County, Texas, United States",,,,,,,,AustinTX
 136,Hops & Grains Brewing Company,Austin, TX,30.267153,-97.7430608,Austin  TX,,,Austin,Texas,United States,,"Austin, Travis County, Texas, United States",,,,,,,,AustinTX
 140,Independence Brewing Company,Austin, TX,30.267153,-97.7430608,Austin  TX,,,Austin,Texas,United States,,"Austin, Travis County, Texas, United States",,,,,,,,AustinTX
 184,Oasis Texas Brewing Company,Austin, TX,30.267153,-97.7430608,Austin  TX,,,Austin,Texas,United States,,"Austin, Travis County, Texas, United States",,,,,,,,AustinTX
@@ -497,7 +497,7 @@ id,name,city,state,Latitude,Longitude,C_D,Street number,Street,City,State,Countr
 382,Blue Mountain Brewery,Afton, VA,38.0323988,-78.8395137,Afton  VA,,,Afton,Virginia,United States,22920,"Afton, Rockfish, Nelson County, Virginia, United States, 22920",,,,,,,,AftonVA
 414,Blue Mountain Brewery,Arrington, VA,37.6840306,-78.9011326,Arrington  VA,,,Arrington,Virginia,United States,22922,"Arrington, Lovingston, Nelson County, Virginia, United States, 22922",,,,,,,,ArringtonVA
 430,Lost Rhino Brewing Company,Ashburn, VA,39.0437567,-77.4874416,Ashburn  VA,,,Ashburn,Virginia,United States,,"Ashburn, Loudoun County, Virginia, United States",,,,,,,,AshburnVA
-122,Center of the Universe Brewing C...,Ashland, VA,37.7590318,-77.4799837,Ashland  VA,,,Ashland,Virginia,United States,23005,"Ashland, Ashland, Hanover County, Virginia, United States, 23005",,,,,,,,AshlandVA
+122,Center of the Universe Brewing Company,Ashland, VA,37.7590318,-77.4799837,Ashland  VA,,,Ashland,Virginia,United States,23005,"Ashland, Ashland, Hanover County, Virginia, United States, 23005",,,,,,,,AshlandVA
 236,Champion Brewing Company,Charlottesville, VA,38.0293059,-78.4766781,Charlottesville  VA,,,Charlottesville,Virginia,United States,,"Charlottesville, Albemarle County, Virginia, United States",,,,,,,,CharlottesvilleVA
 273,Three Notchd Brewing Company,Charlottesville, VA,38.0293059,-78.4766781,Charlottesville  VA,,,Charlottesville,Virginia,United States,,"Charlottesville, Albemarle County, Virginia, United States",,,,,,,,CharlottesvilleVA
 383,Starr Hill Brewery,Crozet, VA,38.0695815,-78.700575,Crozet  VA,,,Crozet,Virginia,United States,22932,"Crozet, White Hall, Albemarle County, Virginia, United States, 22932",,,,,,,,CrozetVA

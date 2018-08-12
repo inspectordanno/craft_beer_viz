@@ -9,29 +9,6 @@
 
 <body>
   <div class="container">
-
-    <div class="map_container">
-        <div class="item map_info">
-            <div class="item select_state"> 
-              1. Click on a state.
-              <span>
-              State selected: <span class="state_selected">the United States</span>
-              </span>
-            </div>
-            <!-- <div class="item current_state"></div> -->
-            <div class="item select_city">2. Hover over a city. 
-                  <svg width="25px" height="25px">
-                      <circle cx="50%" cy="60%" r="10" style="fill:var(--city_yellow); stroke: black; stroke-width: 0.25; opacity: 0.75;"></circle>
-                  </svg>
-                  <br>
-              <div>
-                Bigger circles represent cities with more breweries.
-              </div>
-            </div>
-        </div>
-          <div class="item map" style="position: relative"></div>
-    </div>
-
     <div class="plot_container">
       <div class="item scatter_info">
         <div class="scatter_text">
@@ -49,7 +26,29 @@
       <div class="item ibu_info">Average IBU (bitterness) of all beers in <span class="state_selected">the United States</span>.</div>
       <div class="item ibu"></div>
     </div>
-    
+
+    <div class="map_container">
+      <div class="item map_info">
+          <div class="item select_state"> 
+            1. Click on a state.
+            <span>
+            State selected: <span class="state_selected">the United States</span>
+            </span>
+          </div>
+          
+          <div class="item select_city">2. Hover over a city. 
+                <svg width="25px" height="25px">
+                    <circle cx="50%" cy="60%" r="10" style="fill:var(--city_yellow); stroke: black; stroke-width: 0.25; opacity: 0.75;"></circle>
+                </svg>
+                <br>
+            <div>
+              Bigger circles represent cities with more breweries.
+            </div>
+          </div>
+      </div>
+        <div class="item map" style="position: relative"></div>
+  </div>
+ 
   </div>
   <script src="bundle.js"></script>
 </body>

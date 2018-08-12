@@ -189,7 +189,7 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
 
           //changing color of circle to purple on hover
 
-          d3.selectAll('circle')
+          d3.selectAll('.city')
             .style('fill', 'var(--city_yellow');
 
           d3.select(this)
@@ -200,13 +200,13 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
 
           //tooltip
 
-          const div = d3.select('.map')
+          const cityTooltip = d3.select('.map')
           .append('div')
-          .attr('class', 'tooltip')
+          .attr('class', 'cityTooltip')
           .style('left', `${transformedCx}px`)
           .style('top', `${transformedCy}px`);
          
-          div.append('p')
+          cityTooltip.append('p')
             .html(d.city +','+ d.state)
             .style('font-size', '20px')
             .style('color', 'var(--city_yellow')
@@ -214,17 +214,17 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
             .style('-moz-text-stroke', '.5px black');
           
           if (d.value === 1) {
-            div.append('p')
+            cityTooltip.append('p')
               .html(`${d.value} brewery`)
               .style('font-size', '16px');
           } else if (d.value > 1) {
-            div.append('p')
+            cityTooltip.append('p')
               .html(`${d.value} breweries`)
               .style('font-size', '16px');
           }
         
           d.breweryList.forEach(function(breweryName) {
-            div.append('p')
+            cityTooltip.append('p')
               .html(breweryName)
               .style('font-size', '12px')
           });
@@ -236,10 +236,10 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
         if (active.size() === 1) {
           //changing color of circle to yellow on hover
           console.log(d3.select(this));
-          d3.selectAll('circle')
+          d3.selectAll('.city')
           .style('fill', 'var(--city_yellow)');
 
-          d3.selectAll('.tooltip')
+          d3.selectAll('.cityTooltip')
             .transition()
             .style('opacity', 0)
             .remove();
@@ -265,7 +265,7 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
     function clicked(d) {
 
       //color all circles yellow
-      d3.selectAll('circle')
+      d3.selectAll('.city')
         .style('fill', 'var(--city_yellow');
 
       //returns state to cholorpleth color
