@@ -96,7 +96,7 @@ function scatterplot(beers, exists) {
           .attr('y', 0 - margin.left * .6)
           .attr('x', 0 - (height/2))
           .attr('fill', '#b44663')
-          .attr('textLength', 35)
+          .attr('textLength', 30)
           .style("text-anchor", "middle")
           .style('font-size', `${width / 35}px`)
           .text("IBU")

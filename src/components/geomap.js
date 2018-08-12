@@ -264,6 +264,14 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
 
     function clicked(d) {
 
+      //remove beerTooltip
+
+      d3.selectAll('.beerTooltip')
+        .transition()
+        .duration(800)
+        .style('opacity', '0')
+        .remove();
+
       //color all circles yellow
       d3.selectAll('.city')
         .style('fill', 'var(--city_yellow');
@@ -336,8 +344,6 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
     function reset() {
       //returns states to cholorpleth color
       colorStates();
-
-      //returns all 
 
       //show legend
       d3.select('.legendLinear').style('display', 'block');
