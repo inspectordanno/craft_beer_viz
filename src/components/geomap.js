@@ -37,7 +37,6 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
 
   const w = document.querySelector('.map').clientWidth;
   const h = document.querySelector('.map').clientHeight;
-  console.log(h/2);
   let active = d3.select(null);
 
   const projection = d3.geoAlbersUsa()
@@ -131,12 +130,21 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
 
     const radiusScale = d3.scaleLinear()
       .domain([d3.min(breweriesPerCityValues), d3.max(breweriesPerCityValues)])
-      .range([1, 10]);
+      .range([1, 11]);
 
-      //can't figure out how to get circles to behave with zoom
+    //this is a sequential color scale that I did not use  
+    // const colorScale = d3.scaleSequential(d3.interpolatePiYG)
+    // .domain([d3.min(breweriesPerCityValues), d3.max(breweriesPerCityValues)]); 
+
+    //this sorts the cities from greatest number of breweries to least number of breweries, which 
+    //will ensure that the breweries with the least number of breweries are painted on last
+    const sortedCities = breweriesPerCity.sort((a,b) => {
+      return b.value - a.value;
+    });
+    console.log(sortedCities);
 
     g.selectAll('circle')
-      .data(breweriesPerCity)
+      .data(sortedCities)
       .enter()
       .append('circle')
       .attr('cx', d => {
@@ -158,7 +166,9 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
 
         //isolating the translate and zoom values from the g
 
-        if (active.size() == 1) {
+        console.log(active);
+
+        if (active.size() === 1) {
           const transformValueString = g.attr('transform'); //this is the value that that transforms the g when a state is clicked
           const transformValueArray = [];
           transformValueArray[0] = transformValueString.substring(transformValueString.indexOf('(') +1, transformValueString.indexOf(',')); //x value
@@ -187,10 +197,12 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
 
           console.log(circleCx - translateX);
 
-          //changing color of circle to purple on hover
+          //resets all cities to yellow
 
           d3.selectAll('.city')
             .style('fill', 'var(--city_yellow');
+
+          //changes city to purple on hover
 
           d3.select(this)
             .transition()
@@ -245,6 +257,19 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
             .remove();
         }
       })
+
+      //this doesn't work
+      
+      //changes city to yellow when a state is hovered (when user leaves the city circle)
+
+      //  d3.selectAll('path')
+      //  .on('mouseenter', () => {
+      //    console.log('hello');
+      //    d3.selectAll('.city')
+      //    .style('fill', 'var(--city_yellow');
+      //  });
+
+
       
   //first, I save the beers and breweries to prefiltered variables. //This gets displayed to the initalized state.
 
@@ -292,13 +317,13 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
       console.log(activeState);
 
       const filteredBeers = beers.filter(d => { //these functions filter the data by the state that is clicked
-        if (activeState == d.brewery_state) {
+        if (activeState === d.brewery_state) {
           return d.brewery_state;
         }
       });
 
       const filteredBreweries = breweries.filter(d => {
-        if (activeState == d.State) {
+        if (activeState === d.State) {
           return d.State;
         }
       })

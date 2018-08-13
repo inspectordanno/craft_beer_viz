@@ -1,5 +1,6 @@
 import * as d3 from 'd3';
 
+
 //consulted this histogram example
 //https://bl.ocks.org/d3noob/96b74d0bd6d11427dd797892551a103c
 
@@ -53,6 +54,7 @@ function scatterplot(beers, exists) {
 
     const svg = d3.select('.scatterplot')
       .append('svg')
+      .attr('id', 'scatterSVG')
       .attr('width', width + margin.left + margin.right)
       .attr('height', height + margin.top + margin.bottom)
       .append("g")
@@ -166,10 +168,19 @@ function scatterplot(beers, exists) {
     d3.selectAll('.beer')
       .on('mouseenter', function(d) {
 
+
+        //reset all to brown
+        d3.selectAll('.beer')
+         .attr('fill', 'var(--beer_brown)')
+
+        //set current selected to purple
+        d3.select(this)
+          .attr('fill', 'var(--bright_purple)')
+
         d3.selectAll('.beerTooltip')
-        .transition()
-        .style('opacity', 0)
-        .remove();
+          .transition()
+          .style('opacity', 0)
+          .remove();
         
         const beerCx = parseInt(d3.select(this).attr('cx'));
         const beerCy =  parseInt(d3.select(this).attr('cy'));
@@ -180,7 +191,7 @@ function scatterplot(beers, exists) {
           .style('left', `${beerCx + 60}px`)
           .style('top', `${beerCy + 20}px`)
                     
-        const beerAttribute = (attributeName, attributeValue) => {
+        const beerAttribute = (attributeName, attributeValue, color) => {
           const tooltipP = beerTooltip.append('p');
 
           tooltipP.append('span')
@@ -189,10 +200,11 @@ function scatterplot(beers, exists) {
 
           tooltipP.append('span')
           .html(attributeValue)
-          .attr('class', 'attributeValue');        
+          .attr('class', 'attributeValue')
+          .style('color', color);     
         }
 
-        beerAttribute('Name', d.name);
+        beerAttribute('Name', d.name, 'var(--beer_brown');
         beerAttribute('Style', d.style);
         beerAttribute('Brewery', d.brewery_name);
         beerAttribute('Location', [d.brewery_city, ' ' + d.brewery_state]);
@@ -202,12 +214,21 @@ function scatterplot(beers, exists) {
         
                 
       })
-      // .on('mouseleave', function() {
-      //   d3.selectAll('.beerTooltip')
-      //     .transition()
-      //     .style('opacity', 0)
-      //     .remove();
-      // })
+
+
+   
+      //this fades out the tooltip when the mouse leaves the svg
+   
+      d3.select('#scatterSVG')
+        .on('mouseleave', () => {
+             d3.selectAll('.beerTooltip')
+             .transition()
+             .style('opacity', 0)
+             .remove();
+
+             d3.selectAll('.beer')
+              .attr('fill', 'var(--beer_brown)')
+        });
 }
 
 export default scatterplot;

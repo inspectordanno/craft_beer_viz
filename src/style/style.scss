@@ -81,3 +81,11 @@ path {
   cursor: pointer;
 }
 
+//this was the only way I could turn the circles back to yellow when a state was hovered over
+//i tried to get it to work in D3 but was having problems
+
+path:hover ~ .city {
+  fill: var(--city_yellow) !important;
+}
+
+
