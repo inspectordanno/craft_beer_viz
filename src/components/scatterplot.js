@@ -196,7 +196,8 @@ function scatterplot(beers, exists) {
 
           tooltipP.append('span')
           .html(`${attributeName}: `)
-          .attr('class', 'attributeName');
+          .attr('class', 'attributeName')
+          .style('color', color);
 
           tooltipP.append('span')
           .html(attributeValue)
