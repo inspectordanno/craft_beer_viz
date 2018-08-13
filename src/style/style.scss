@@ -61,13 +61,14 @@ h5,
 h6 {
   margin: 0 0 5px 0;
 }
+
 /* Each item in our grid will contain numbers */
 .item {
   /* We center the contents of these items. You can also do this with flexbox too! */
   display: grid;
   justify-content: center;
   align-items: center;
-  border: 5px solid rgba(0, 0, 0, 0.03);
+  border: 5px solid rgba(0, 0, 0, 0.01);
   border-radius: 3px;
   font-size: 35px;
   background-color: var(--yellow); /* best colour */
