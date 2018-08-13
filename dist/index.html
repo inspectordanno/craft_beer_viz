@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Viz of U.S. Craft Beers</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="plot_container">
+      <div class="item scatter_info">
+        <div class="scatter_text">
+        3. Each point represents a beer from
+        <span class="state_selected"> the United States</span>. 
+        Hover over each to learn more.
+        </div>
+      </div>
+      <div class="item scatterplot" style="position: relative"></div>
+    </div>
+
+    <div class="histograms">
+      <div class="item abv_info">Average alcohol by volume of all beers in <span class="state_selected">the United States</span></div>
+      <div class="item abv"></div>
+      <div class="item ibu_info">Average IBU (bitterness) of all beers in <span class="state_selected">the United States</span>.</div>
+      <div class="item ibu"></div>
+    </div>
+
+    <div class="map_container">
+      <div class="item map_info">
+          <div class="item select_state"> 
+            1. Click on a state.
+            <span>
+            State selected: <span class="state_selected">the United States</span>
+            </span>
+          </div>
+          
+          <div class="item select_city">2. Hover over a city. 
+                <svg width="25px" height="25px">
+                    <circle cx="50%" cy="60%" r="10" style="fill:var(--city_yellow); stroke: black; stroke-width: 0.25; opacity: 0.75;"></circle>
+                </svg>
+                <br>
+            <div>
+              Bigger circles represent cities with more breweries.
+            </div>
+          </div>
+      </div>
+        <div class="item map" style="position: relative"></div>
+  </div>
+ 
+  </div>
+  <script src="bundle.js"></script>
+</body>
+
+</html>
