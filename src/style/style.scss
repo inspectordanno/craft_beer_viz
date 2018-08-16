@@ -1,3 +1,5 @@
+//some of these base styles were adapted from a css grid lesson from a wes bos course:
+//http://cssgrid.io
 
 //color variables
 
@@ -43,8 +45,8 @@ html {
 }
 
 body {
-  background-image: url("../images/topography.svg"),
-    linear-gradient(110deg, var(--bright_red), var(--bright_purple));
+  background-image: url("../images/topography.svg");
+    // linear-gradient(110deg, var(--bright_red), var(--bright_purple));
   background-size: 340px, auto;
   min-height: calc(100vh - 100px);
   margin: 50px;

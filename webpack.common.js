@@ -39,7 +39,14 @@ module.exports = {
 					'css-loader',
 					'sass-loader'
 				]
-			},
+      },
+      {
+        test: /\.svg/,
+        use: {
+            loader: 'svg-url-loader',
+            // options: {}
+        }
+      },
 			{ test: /\.woff(\d+)?$/, loader: 'url-loader?prefix=font/&limit=5000&mimetype=application/font-woff' },
          	{ test: /\.ttf$/, loader: 'file-loader?prefix=font/' },
          	{ test: /\.eot$/, loader: 'file-loader?prefix=font/' },

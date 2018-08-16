@@ -5,10 +5,12 @@ import {selectAll, on} from 'd3-selection';
 import('./style/style.scss');
 import('./style/grid_style.scss');
 
+require('svg-url-loader!./images/topography.svg');
+require('svg-url-loader!./images/bubble.svg');
+
 //This index file is just importing various modules and making promises out of the .csv files.
 //For a more detailed look into how the controller (U.S. map) works to drive the chart data, please look at
 //geomap.js.
-
 
 const dataFiles = ['./data/beers.csv', './data/breweries.csv'];
 const promises = [];
