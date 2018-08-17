@@ -2,7 +2,6 @@
 //https://webpack.github.io/docs/configuration.html
 const path = require('path');
 const webpack = require('webpack');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 
 module.exports = {
@@ -11,13 +10,7 @@ module.exports = {
 		  $: "jquery",
 		  jQuery: "jquery",
 			'window.jQuery': 'jquery'
-    }),
-    new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: "style.css",
-      chunkFilename: "style.css"
-    })
+		})
 	],
 	entry:[
 		'./src/index.js',
@@ -38,7 +31,7 @@ module.exports = {
 						presets:['es2015','react','stage-2']
 					}
 				}
-      },
+			},
 			{
 				test: /\.scss$/,
 				use:[
@@ -58,6 +51,3 @@ module.exports = {
 		]
 	}
 }
-
-
-
