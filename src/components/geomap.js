@@ -38,7 +38,7 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
   const w = document.querySelector('.map').clientWidth;
   const h = document.querySelector('.map').clientHeight;
   let active = d3.select(null);
-
+  
   const projection = d3.geoAlbersUsa()
     .translate([w/2, h/2])
     .scale(w * 1.25);

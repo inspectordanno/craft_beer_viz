@@ -90,10 +90,10 @@ function ibuHistogram(beers, exists) {
       svg.append("text")
           .attr("transform", `translate(${(width/2)}, ${height + margin.top * 4})`)
           .style("text-anchor", "middle")
-          .style('font-size', `${width / 20}px`)
           .attr('fill', 'var(--ibu_red)')
-          .attr('textLength', 22)
-          .text("IBU");
+          // .attr('textLength', 22)
+          .attr('class', 'chartSubtitle')
+          .text("IBU")
 
       //add y axis
       const yAxis = svg.append('g') //appends a new g element
@@ -106,8 +106,8 @@ function ibuHistogram(beers, exists) {
           .attr('y', 0 - margin.left * .65)
           .attr('x', 0 - (height/2))
           .style("text-anchor", "middle")
-          .style('font-size', `${width / 20}px`)
-          .attr('textLength', 110)
+          // .attr('textLength', 110)
+          .attr('class', 'chartSubtitle')
           .text("Number of Beers");
 
       svg.append('text')
@@ -115,8 +115,8 @@ function ibuHistogram(beers, exists) {
           .attr('y', height * .05)
           .attr('fill', '#b44663')
           .style('font-style', 'italic')
-          .style('font-size', `${width / 27}px`)
-          .attr('textLength', 160)
+          // .attr('textLength', 250)
+          .attr('class', 'ibuDesc')
           .text('Beers with higher IBU are more bitter.');
 
       //adjust axis tick labels - this controls both abv and ibu tick labels!

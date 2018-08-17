@@ -86,9 +86,9 @@ function abvHistogram(beers, exists) {
       svg.append("text")
           .attr("transform", `translate(${(width/2)}, ${height + margin.top * 4})`)
           .style("text-anchor", "middle")
-          .style('font-size', `${width / 20}px`)
           .attr('fill', 'steelblue')
-          .attr('textLength', 110)
+          // .attr('textLength', 110)
+          .attr('class', 'chartSubtitle')
           .text("Alcohol by Volume");
 
       //add y axis
@@ -103,8 +103,8 @@ function abvHistogram(beers, exists) {
           .attr('y', 0 - margin.left * .65)
           .attr('x', 0 - (height/2))
           .style("text-anchor", "middle")
-          .attr('textLength', 110)
-          .style('font-size', `${width / 20}px`)
+          // .attr('textLength', 110)
+          .attr('class', 'chartSubtitle')
           .text("Number of Beers");
 
       // svg.append('text')

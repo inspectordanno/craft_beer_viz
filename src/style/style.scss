@@ -18,6 +18,7 @@
   --abv_blue: steelblue;
   --beer_brown: #C06018;
   --gray: #ededed;
+  --off_white: #f8f8ff;
 
 }
 
@@ -50,8 +51,7 @@ body {
   background-attachment: fixed;
   letter-spacing: -.5px;
   overflow-x: hidden;
-  background: rgb(181,176,255);
-background: linear-gradient(90deg, rgba(181,176,255,1) 38%, rgba(0,202,255,1) 88%, rgba(35,203,237,1) 100%);
+  background: linear-gradient(#fff, var(--city_yellow), var(--beer_brown));
 }
 
 h1,
