@@ -49,6 +49,9 @@ body {
   margin: 50px;
   background-attachment: fixed;
   letter-spacing: -.5px;
+  overflow-x: hidden;
+  background: rgb(181,176,255);
+background: linear-gradient(90deg, rgba(181,176,255,1) 38%, rgba(0,202,255,1) 88%, rgba(35,203,237,1) 100%);
 }
 
 h1,
