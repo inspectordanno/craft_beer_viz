@@ -225,3 +225,24 @@
         
       }
     }
+
+    .craft_definition {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      place-items: center center;
+
+      div {
+        font-size: 30px;
+      }
+    }
+
+    #credits {
+      p {
+        font-size: 16px;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--abv_blue);
+      }
+    }
