@@ -242,14 +242,27 @@
       padding: 2% 10%;
       border-radius: 3px;
       @include boxShadow;
+
+      .text_title {
+        margin-bottom: 10%;
+        line-height: 1;
+        margin-top: 5%;
+      }
       
       
 
-      h1 {
+      h1,h2,h3 {
         text-align: center;
+        font-size: 2vw;
+      }
+
+      h1 {
         font-size: 5vw;
-        margin-bottom: 30px;
-        color: var(--beer_brown);
+      }
+
+      h3 {
+        font-family: 'Crimson Text', 'Georgia', serif;
+        margin-top: 5%;
       }
 
       p {
