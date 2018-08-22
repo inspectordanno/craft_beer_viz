@@ -138,13 +138,12 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
 
     //this sorts the cities from greatest number of breweries to least number of breweries, which 
     //will ensure that the breweries with the least number of breweries are painted on last
-    const sortedCities = breweriesPerCity.sort((a,b) => {
+    breweriesPerCity.sort((a,b) => {
       return b.value - a.value;
     });
-    console.log(sortedCities);
-
+  
     g.selectAll('circle')
-      .data(sortedCities)
+      .data(breweriesPerCity)
       .enter()
       .append('circle')
       .attr('cx', d => {
