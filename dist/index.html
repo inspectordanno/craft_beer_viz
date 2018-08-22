@@ -8,13 +8,47 @@
 </head>
 
 <body>
+<div id="background-wrap">
+    <div class="bubble x1"></div>
+    <div class="bubble x2"></div>
+    <div class="bubble x3"></div>
+    <div class="bubble x4"></div>
+    <div class="bubble x5"></div>
+    <div class="bubble x6"></div>
+    <div class="bubble x7"></div>
+    <div class="bubble x8"></div>
+    <div class="bubble x9"></div>
+    <div class="bubble x10"></div>
+</div>  
+<div class="text_container">
+    <div class="text_title">
+        <h2>A Visual Insight into<h2> 
+        <h1>U.S. Craft Beers</h1>
+        <h3>by Dan Spector</h3>
+    </div>
+    <p>Craft breweries are the fastest growing segment of the American beer industry. In 2017, while total U.S. beer sales were actually down 1.2% from the previous year, craft beer sales were up a whopping 5%. In addition, overall production of beer was down 1% in 2017, whereas craft breweries produced 5% more beer by volume. What makes craft breweries so appealing?</p>
+    <div class="craft_definition">
+      <div class="craft_category" id="size">Size</div>
+      <p class="craft_desc">Annual production of barrels of beer in a craft brewery must equal 6 million barrels or less. This equates to approximately 3% of annual U.S. beer sales.</p>
+      <div class="craft_category" id="independence">Independence</div>
+      <p class="craft_desc">Only 25% or less of a craft brewery can be controlled by another beverage alcohol industry member. This member cannot itself be a craft brewery.</p>
+      <div class="craft_category" id="tradition">Tradition</div>
+      <p class="craft_desc">A majority of the alcohol content of a craft beer must derive from the fermentation process. For instance, a flavored malt beverage does not count as a craft beer.</p>
+    </div>
+    <p>The visualizations below present a snapshot of American craft beers and breweries, organized by state. Unfortunately, the dataset is not an exhaustive list. There are 559 breweries and 2,411 beers currently listed, out of a total of over 6,000 U.S. craft breweries as of 2018. Cheers!</p>
+    <div id="credits">
+      <h2>Credits</h2>
+      <p>The craft brewery statistics and definitions above were sourced from the <a target="_blank" href="https://www.brewersassociation.org/brewers-association/craft-brewer-definition/">Brewers Association for Small and Independent Craft Breweries</a>.</p>
+      <p>The dataset used to power this visualization comes from <a target="_blank" href="https://github.com/nickhould/craft-beers-dataset">Jean-Nicholas Hould</a>.</p>
+      <p>The bubble animation comes from a pen by <a target="_blank" href="https://codepen.io/Mark_Bowley/pen/mEtqj">Mark Bowley</a>.</p>
+    </div>
+  </div>
   <div class="container">
     <div class="plot_container">
       <div class="item scatter_info">
         <div class="scatter_text">
-        3. Each point represents a beer from
-        <span class="state_selected"> the United States</span>. 
-        Hover over each to learn more.
+        3. Hover over each beer from
+        <span class="state_selected"> the United States</span>! 
         </div>
       </div>
       <div class="item scatterplot" style="position: relative"></div>
@@ -23,7 +57,7 @@
     <div class="histograms">
       <div class="item abv_info">Average alcohol by volume of all beers in <span class="state_selected">the United States</span></div>
       <div class="item abv"></div>
-      <div class="item ibu_info">Average IBU (bitterness) of all beers in <span class="state_selected">the United States</span>.</div>
+      <div class="item ibu_info">Average International Bitterness Unit of all beers in <span class="state_selected">the United States</span></div>
       <div class="item ibu"></div>
     </div>
 
@@ -51,6 +85,7 @@
  
   </div>
   <script src="bundle.js"></script>
+</div>
 </body>
 
 </html>
