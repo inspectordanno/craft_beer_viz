@@ -31,7 +31,16 @@ function scatterplot(beers, exists) {
   const containerHeight = document.querySelector('.scatterplot').clientHeight;
 
   const width = containerWidth - margin.left - margin.right;
-  const height = containerHeight - margin.top - margin.bottom;
+  let height = containerHeight - margin.top - margin.bottom;
+
+  //breakpoints to make more responsive
+
+  // if (width < 800 ) {
+  //   height = 600;
+  // }
+
+
+  console.log(height)
 
   const x = d3.scaleLinear() //define x range
     .domain([0, 0.13]) //domain goes from 0% abv to 13% abv
@@ -89,7 +98,7 @@ function scatterplot(beers, exists) {
         .style("text-anchor", "middle")
         .style('font-size', `${width / 35}px`)
         .attr('fill', 'steelblue')
-        .attr('textLength', 150)
+        // .attr('textLength', 150)
         .text("Alcohol by Volume");
 
       // text label for the y axis
@@ -110,11 +119,12 @@ function scatterplot(beers, exists) {
 
       svg.append('text')
           .attr('x', width * .75)
+          .style('text-anchor', 'end')
           .attr('y', height * .02)
           .attr('fill', 'var(--beer_brown)')
           .style('font-style', 'italic')
           .style('font-size', `${width / 35}px`)
-          .attr('textLength', 150)
+          // .attr('textLength', 150)
           .text('Hover over a beer!');
       
           d3.selectAll('.tick>text')
