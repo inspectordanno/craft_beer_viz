@@ -2,15 +2,16 @@
 //https://webpack.github.io/docs/configuration.html
 const path = require('path');
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 module.exports = {
 	plugins:[
-		new webpack.ProvidePlugin({
-		  $: "jquery",
-		  jQuery: "jquery",
-			'window.jQuery': 'jquery'
-		})
+		new ExtractTextPlugin({
+      filename: 'style.css',
+      disable: false,
+      allChunks: true
+    })
 	],
 	entry:[
 		'./src/index.js',
@@ -34,11 +35,23 @@ module.exports = {
 			},
 			{
 				test: /\.scss$/,
-				use:[
-					'style-loader',
-					'css-loader',
-					'sass-loader'
-				]
+				use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: true
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: true
+              }
+            }
+          ]
+        })
       },
 			{ test: /\.woff(\d+)?$/, loader: 'url-loader?prefix=font/&limit=5000&mimetype=application/font-woff' },
          	{ test: /\.ttf$/, loader: 'file-loader?prefix=font/' },
