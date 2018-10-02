@@ -9,6 +9,10 @@ import abvHistogram from './abv_histogram';
 import ibuHistogram from './ibu_histogram';
 import scatterplot from './scatterplot';
 
+//import breakpoints
+
+import {mapWidth, mapHeight} from './breakpoints'
+
 //import tooltip
 
 import('../style/tooltip.scss'); 
@@ -35,13 +39,11 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
   // console.log(beers);
   // console.log(ibuBeers);
 
-  const w = document.querySelector('.map').clientWidth;
-  const h = document.querySelector('.map').clientHeight;
   let active = d3.select(null);
   
   const projection = d3.geoAlbersUsa()
-    .translate([w/2, h/2])
-    .scale(w * 1.25);
+    .translate([mapWidth/2, mapHeight/2])
+    .scale(mapWidth * 1.25);
 
   const zoom = d3.zoom()
     .scaleExtent([1,8])
@@ -59,8 +61,8 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
 
   const svg = d3.select('.map')
     .append('svg')
-    .attr('width', w)
-    .attr('height', h)
+    .attr('width', mapWidth)
+    .attr('height', mapHeight)
     .on('click', stopped, true);
   
   //background rectangle for legend
@@ -72,7 +74,7 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
 
   svg.append('g')
     .attr('class', 'legendLinear')
-    .attr('transform', `translate(${w * .60}, ${h * .08}) scale(${w * .00060})`)
+    .attr('transform', `translate(${mapWidth * .60}, ${mapHeight * .08}) scale(${mapWidth * .00060})`)
 
   const legendLinear = legendColor()
     .title('Craft Breweries Per State')
@@ -353,8 +355,8 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
           dy = bounds[1][1] - bounds[0][1],
           x = (bounds[0][0] + bounds[1][0]) / 2,
           y = (bounds[0][1] + bounds[1][1]) / 2,
-          scale = Math.max(1, Math.min(8, 0.9 / Math.max(dx / w, dy / h))),
-          translate = [w / 2 - scale * x, h / 2 - scale * y];
+          scale = Math.max(1, Math.min(8, 0.9 / Math.max(dx / mapWidth, dy / mapHeight))),
+          translate = [mapWidth/ 2 - scale * x, mapHeight / 2 - scale * y];
 
       svg.transition()
           .duration(750)

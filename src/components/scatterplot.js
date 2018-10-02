@@ -1,5 +1,5 @@
 import * as d3 from 'd3';
-
+import {margin, scatterWidth, scatterHeight} from './breakpoints';
 
 //consulted this histogram example
 //https://bl.ocks.org/d3noob/96b74d0bd6d11427dd797892551a103c
@@ -19,28 +19,8 @@ function scatterplot(beers, exists) {
 
   console.log(ibuBeers);
 
-//dimensions and margins of plot
-  const margin = {
-      top: 10,
-      right: 20,
-      bottom: 50,
-      left: 60
-    }
-
-  const containerWidth = document.querySelector('.scatterplot').clientWidth;
-  const containerHeight = document.querySelector('.scatterplot').clientHeight;
-
-  const width = containerWidth - margin.left - margin.right;
-  let height = containerHeight - margin.top - margin.bottom;
-
-  //breakpoints to make more responsive
-
-  // if (width < 800 ) {
-  //   height = 600;
-  // }
-
-
-  console.log(height)
+  const width = scatterWidth - margin.left - margin.right;
+  const height = scatterHeight - margin.top - margin.bottom;
 
   const x = d3.scaleLinear() //define x range
     .domain([0, 0.13]) //domain goes from 0% abv to 13% abv
@@ -118,7 +98,7 @@ function scatterplot(beers, exists) {
         .call(yAxis);
 
       svg.append('text')
-          .attr('x', width * .75)
+          .attr('x', width * .95)
           .style('text-anchor', 'end')
           .attr('y', height * .02)
           .attr('fill', 'var(--beer_brown)')

@@ -1,4 +1,5 @@
 import * as d3 from 'd3';
+import {histWidth, histHeight, margin} from './breakpoints';
 
 //consulted this histogram example
 //https://bl.ocks.org/d3noob/96b74d0bd6d11427dd797892551a103c
@@ -16,19 +17,8 @@ function ibuHistogram(beers, exists) {
     }
   });
 
-//dimensions and margins of plot
-  const margin = {
-      top: 10,
-      right: 30,
-      bottom: 50,
-      left: 60
-    }
-
-  const containerWidth = document.querySelector('.ibu').clientWidth;
-  const containerHeight = document.querySelector('.ibu').clientHeight;
-
-  const width = containerWidth - margin.left - margin.right;
-  const height = containerHeight - margin.top - margin.bottom;
+  const width = histWidth - margin.left - margin.right;
+  const height = histHeight - margin.top - margin.bottom;
 
   const x = d3.scaleLinear() //define x range
     .domain([0, 140])
@@ -111,13 +101,14 @@ function ibuHistogram(beers, exists) {
           .text("Number of Beers");
 
       svg.append('text')
-          .attr('x', width * .35)
-          .attr('y', height * .05)
+          .attr('x', width * .99)
+          .attr('y', height * .01)
           .attr('fill', '#b44663')
           .style('font-style', 'italic')
           // .attr('textLength', 250)
           .attr('class', 'ibuDesc')
-          .text('Beers with higher IBU are more bitter.');
+          .text('Beers with higher IBU are more bitter.')
+          .style('text-anchor', 'end');
 
       //adjust axis tick labels - this controls both abv and ibu tick labels!
 

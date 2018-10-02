@@ -1,6 +1,5 @@
 import {nest} from 'd3-collection';
 import {csv, json} from 'd3-fetch';
-import {selectAll, on} from 'd3-selection';
 
 import('./style/style.scss');
 import('./style/grid_style.scss');

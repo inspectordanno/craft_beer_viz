@@ -14,7 +14,7 @@
       grid-template-areas: 
       "map_container map_container histograms"
       "plot_container plot_container plot_container";
-      margin: auto 10%;
+      margin: auto 7.5%;
     }
 
     //styles for map directions
@@ -66,7 +66,6 @@
 
     .map {
       grid-area: map;
-      background: var(--gray);
       border: none;
       @include boxShadow;
       background: var(--off_white);
@@ -191,7 +190,7 @@
 
 
     
-    @media (max-width: 1000px) {
+    @media (max-width: 1330px) {
       .container {
         grid-template-rows: .5fr .5fr .75fr;
         grid-template-columns: 1fr;
@@ -230,9 +229,9 @@
         font-size: 1.5vw;
       }
 
-      .ibuDesc {
-        font-size: 2vw;
-      }
+      // .ibuDesc {
+      //   font-size: 2vw;
+      // }
     }
 
     //styles for text container

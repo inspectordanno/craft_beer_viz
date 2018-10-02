@@ -1,4 +1,5 @@
 import * as d3 from 'd3';
+import {histWidth, histHeight, margin} from './breakpoints'
 
   //consulted this histogram example
   //https://bl.ocks.org/d3noob/96b74d0bd6d11427dd797892551a103c
@@ -14,12 +15,9 @@ function abvHistogram(beers, exists) {
       bottom: 50,
       left: 60
     }
-
-  const containerWidth = document.querySelector('.abv').clientWidth;
-  const containerHeight = document.querySelector('.abv').clientHeight;
-
-  const width = containerWidth - margin.left - margin.right;
-  const height = containerHeight - margin.top - margin.bottom;
+  
+  const width = histWidth - margin.left - margin.right;
+  const height = histHeight - margin.top - margin.bottom;
 
   const x = d3.scaleLinear() //define x range
     .domain([0, 0.13]) //domain goes from 0% abv to 13% abv
