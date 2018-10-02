@@ -98,7 +98,7 @@ function scatterplot(beers, exists) {
         .call(yAxis);
 
       svg.append('text')
-          .attr('x', width * .95)
+          .attr('x', width * .99)
           .style('text-anchor', 'end')
           .attr('y', height * .02)
           .attr('fill', 'var(--beer_brown)')
