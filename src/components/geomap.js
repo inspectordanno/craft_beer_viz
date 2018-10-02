@@ -39,6 +39,9 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
   // console.log(beers);
   // console.log(ibuBeers);
 
+  console.log(document.querySelector('.map').clientWidth);
+  console.log(document.querySelector('.map').clientHeight);
+
   let active = d3.select(null);
   
   const projection = d3.geoAlbersUsa()
@@ -289,7 +292,7 @@ function geoMap(beersPerState, breweriesPerCity, breweriesPerState, breweriesPer
   //zooming behavior https://bl.ocks.org/iamkevinv/0a24e9126cd2fa6b283c6f2d774b69a2
 
     function clicked(d) {
-
+    
       //remove beerTooltip
 
       d3.selectAll('.beerTooltip')

@@ -26,11 +26,13 @@ export let histHeight;
 export let scatterWidth;
 export let scatterHeight;
 
+
 //then, I set my breakpoints
 
 if (wW >= 768 ) {
-  mapWidth = 700;
+  // mapWidth = 700;
   mapHeight = 500;
+  mapWidth = document.querySelector('.map').clientWidth;
 
   histWidth = 336;
   histHeight = 222;
@@ -38,17 +40,30 @@ if (wW >= 768 ) {
   scatterWidth = 692;
   scatterHeight = 535;
 
+
+// mapHeight = document.querySelector('.map').clientHeight;
+
+// histWidth = document.querySelector('.abv').clientWidth;
+// histHeight = document.querySelector('.abv').clientHeight;
+
+// scatterWidth = document.querySelector('.scatterplot').clientWidth;
+// scatterHeight = document.querySelector('.scatterplot').clientHeight;
+
+
 //landscape phone 
 } else if (wW < 768) {
 
   mapWidth = 336;
   mapHeight = 222;
+  // mapWidth = document.querySelector('.map').clientWidth;
 
-  histWidth = 300;
+  histWidth = 250;
   histHeight = 222;
 
-  scatterWidth = 300;
+  scatterWidth = 250;
   scatterHeight = 222;
 
 }
+
+
 
