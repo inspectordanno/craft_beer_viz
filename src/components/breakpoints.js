@@ -1,3 +1,5 @@
+import {selectAll} from 'd3-selection';
+
 // this file creates breakpoints and sizes the charts
 
 //first, I get the window dimensions
@@ -29,28 +31,22 @@ export let scatterHeight;
 
 //then, I set my breakpoints
 
+//desktop
 if (wW >= 768 ) {
-  // mapWidth = 700;
-  mapHeight = 500;
-  mapWidth = document.querySelector('.map').clientWidth;
 
-  histWidth = 336;
-  histHeight = 222;
+  //1.4 ratio
+  mapWidth = document.querySelector('.map').clientWidth; //700
+  mapHeight = mapWidth / 1.4; //500
 
-  scatterWidth = 692;
-  scatterHeight = 535;
+  //1.5 ratio
+  histWidth = document.querySelector('.abv').clientWidth; //336
+  histHeight = histWidth / 1.5; //222
 
+  //1.3 ratio
+  scatterWidth = document.querySelector('.scatterplot').clientWidth; //692
+  scatterHeight = scatterWidth / 1.3; //535
 
-// mapHeight = document.querySelector('.map').clientHeight;
-
-// histWidth = document.querySelector('.abv').clientWidth;
-// histHeight = document.querySelector('.abv').clientHeight;
-
-// scatterWidth = document.querySelector('.scatterplot').clientWidth;
-// scatterHeight = document.querySelector('.scatterplot').clientHeight;
-
-
-//landscape phone 
+//phone 
 } else if (wW < 768) {
 
   mapWidth = 336;

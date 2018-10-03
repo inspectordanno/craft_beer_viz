@@ -6,28 +6,31 @@
     }
 
     //styles for overall container
+
     .container {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr; //3 columns of equal width
-      grid-template-rows: 8fr 8fr; /* 2 rows */
-      grid-gap: 10px;
+      grid-template-columns: repeat(6, 1fr); //2 columns of equal width
+      grid-template-rows: 2fr 2fr; /* 3 rows */
       grid-template-areas: 
-      "map_container map_container histograms"
-      "plot_container plot_container plot_container";
+      "map_container map_container map_container map_container histograms histograms"
+      ". plot_container plot_container plot_container plot_container . ";
+      grid-gap: 10px;
       margin: auto 7.5%;
     }
 
-    //styles for map directions
-
+    //styles for map container
     .map_container {
-      grid-area: map_container;
       display: grid;
+      grid-area: map_container;
       grid-gap: 10px;
-      grid-template-rows: .5fr 5fr;
+      grid-template-rows: 1fr 5fr;
       grid-template-areas:
       "map_info"
-      "map";
+      "map"
     }
+    
+    //styles for map directions
+
 
     .map_info {
       grid-area: map_info;
@@ -78,7 +81,7 @@
       grid-area: plot_container;
       display: grid;
       grid-gap: 10px;
-      grid-template-rows: 1fr 10fr;
+      grid-template-rows: .1fr 1fr;
       grid-template-areas: 
       "scatter_info"
       "scatterplot";
@@ -88,14 +91,14 @@
       grid-area: scatter_info;
       font-size: 1.75rem;
       /* min-height: 100px; */
-      background: var(--blue);
+      background: var(--gray);
       // display: inline;
       @include boxShadow;
     }
   
     .scatterplot {
       grid-area: scatterplot;
-      background: var(--blue);
+      background: var(--gray);
       @include boxShadow;
     }
 
@@ -105,7 +108,7 @@
       grid-area: histograms;
       display: grid;
       grid-gap: 10px;
-      grid-template-rows: 1fr 10fr 1fr 10fr;
+      grid-template-rows: 1fr 4fr 1fr 4fr;
       grid-template-areas:
       "abv_info"
       "abv"
@@ -151,45 +154,6 @@
       letter-spacing: 1px;
     }
 
-    @media (max-width: 1500px) {
-
-      .container {
-        grid-template-columns: repeat(6, 1fr); //2 columns of equal width
-        grid-template-rows: 2fr 2fr; /* 3 rows */
-        grid-template-areas: 
-        "map_container map_container map_container map_container histograms histograms"
-        ". plot_container plot_container plot_container plot_container . ";
-      }
-
-      .map_container {
-        grid-template-rows: 1fr 5fr;
-        grid-template-areas:
-        "map_info"
-        "map"
-      }
-      
-
-      .plot_container {
-        grid-template-rows: .1fr 1fr;
-        grid-template-areas: 
-        "scatter_info"
-        "scatterplot";
-
-      }
-
-      .histograms {
-        grid-template-rows: 1fr 4fr 1fr 4fr;
-        grid-template-areas:
-        "abv_info"
-        "abv"
-        "ibu_info"
-        "ibu";
-      }
-        
-    }
-
-
-    
     @media (max-width: 1330px) {
       .container {
         grid-template-rows: .5fr .5fr .75fr;
