@@ -10,12 +10,79 @@
     .container {
       display: grid;
       grid-template-columns: repeat(6, 1fr); //2 columns of equal width
-      grid-template-rows: 2fr 2fr; /* 3 rows */
+      grid-template-rows: auto 2fr 2fr; /* 3 rows */
       grid-template-areas: 
+      ". text_container text_container text_container text_container ."
       "map_container map_container map_container map_container histograms histograms"
       ". plot_container plot_container plot_container plot_container . ";
       grid-gap: 10px;
       margin: auto 7.5%;
+    }
+
+    //styles for text container
+
+    .text_container {
+      grid-area: text_container;
+      background: var(--gray);
+      padding: 2% 10%;
+      border-radius: 3px;
+      @include boxShadow;
+
+      .text_title {
+        margin-bottom: 5%;
+        line-height: 1;
+        margin-top: 5%;
+      }
+      
+
+      h1,h2,h3 {
+        text-align: center;
+        font-size: 3em;
+      }
+
+      h1 {
+        font-size: 6em;
+      }
+
+      h3 {
+        font-family: 'Crimson Text', 'Georgia', serif;
+        margin-top: 2%;
+      }
+
+      p {
+        font-size: 2em;
+        font-family: 'Crimson Text', 'Georgia', serif;
+        text-shadow: none;
+        
+      }
+    }
+
+    .craft_definition {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      place-items: center center;
+      
+
+      div {
+        font-size: 3em;
+        color: var(--beer_brown);
+      }
+    }
+
+    #credits {
+      h2 {
+        text-align: left;
+        font-size: 2em;
+      }
+
+      p {
+        font-size: 1.5em;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--abv_blue);
+      }
     }
 
     //styles for map container
@@ -37,7 +104,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       /* justify-content: center; */
-      min-height: 100px;
       /* font-size: 10px; */
       justify-items: center;
       @include boxShadow;
@@ -108,7 +174,7 @@
       grid-area: histograms;
       display: grid;
       grid-gap: 10px;
-      grid-template-rows: 1fr 4fr 1fr 4fr;
+      grid-template-rows: auto 4fr auto 4fr;
       grid-template-areas:
       "abv_info"
       "abv"
@@ -145,31 +211,65 @@
     }
 
     .chartSubtitle {
-      font-size: 1vw;
-      letter-spacing: 1px;
+      font-size: .5em;
+      // letter-spacing: 1px;
     }
 
     .ibuDesc {
-      font-size: .55vw;
-      letter-spacing: 1px;
+      font-size: .25em;
+      // letter-spacing: 1px;
     }
 
-    @media (max-width: 1330px) {
+    @media (max-width: 787px) {
       .container {
-        grid-template-rows: .5fr .5fr .75fr;
-        grid-template-columns: 1fr;
+        grid-template-rows: auto .5fr .5fr .75fr;
+        grid-template-columns: 1fr 1fr;
         grid-template-areas:
+        "text_container text_container"
         "map_container map_container"
         "plot_container plot_container"
         "histograms histograms";
         // height: 600px;
+        margin: 0 auto;
       }
 
       .map_container {
-        grid-template-rows: 1fr 3fr;
+        grid-template-rows: auto 3fr;
         grid-template-areas:
         "map_info"
         "map"
+      }
+
+      .map_info {
+        grid-area: map_info;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        /* justify-content: center; */
+        /* font-size: 10px; */
+        justify-items: center;
+        @include boxShadow;
+        background: var(--off_white);
+  
+        div {
+          border: none;
+          font-size: .25em;
+          text-align: center;
+          background: var(--off_white);
+        }
+      }
+  
+      .select_state span {
+        padding-top: 10px;
+        font-size: 16px;
+      }
+  
+      .select_city div {
+        padding-top: 10px;
+        font-size: 12px;
+      }
+  
+      .select_city {
+        display: block;
       }
 
       .plot_container {
@@ -189,78 +289,43 @@
         "ibu";
       }
 
-      .chartSubtitle {
-        font-size: 1.5vw;
+      .text_container {
+
+        .text_title > * {
+          margin-bottom: 10%;
+          
+        }
+
+        .craft_definition {
+          display: block;
+        }
+
+        h1 {
+          font-size: 3em;
+        }
+
+        h2 {
+          font-size: 2em;
+        }
+
+        // h3 {
+        //   font-size: 
+        // }
+
+        .craft_category {
+          font-size: 2.5em;
+        }
       }
 
-      // .ibuDesc {
-      //   font-size: 2vw;
+     
+
+      // .chartSubtitle {
+      //   font-size: 1.5vw;
       // }
+
+      // // .ibuDesc {
+      // //   font-size: 2vw;
+      // // }
     }
 
-    //styles for text container
-
-    .text_container {
-      background: var(--gray);
-      margin: 10px 10%;
-      padding: 2% 10%;
-      border-radius: 3px;
-      @include boxShadow;
-
-      .text_title {
-        margin-bottom: 10%;
-        line-height: 1;
-        margin-top: 5%;
-      }
-      
-      
-
-      h1,h2,h3 {
-        text-align: center;
-        font-size: 2vw;
-      }
-
-      h1 {
-        font-size: 5vw;
-      }
-
-      h3 {
-        font-family: 'Crimson Text', 'Georgia', serif;
-        margin-top: 5%;
-      }
-
-      p {
-        font-size: 1.5vw;
-        font-family: 'Crimson Text', 'Georgia', serif;
-        text-shadow: none;
-        
-      }
-    }
-
-    .craft_definition {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      place-items: center center;
-      
-
-      div {
-        font-size: 2vw;
-        color: var(--beer_brown);
-      }
-    }
-
-    #credits {
-      h2 {
-        text-align: left;
-        font-size: 1.5vw;
-      }
-
-      p {
-        font-size: 1vw;
-      }
-
-      a {
-        text-decoration: none;
-        color: var(--abv_blue);
-      }
-    }
+    

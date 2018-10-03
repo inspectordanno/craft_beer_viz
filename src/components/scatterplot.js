@@ -147,7 +147,6 @@ function scatterplot(beers, exists) {
         .attr('stroke-width', 1)
         .attr('fill', 'var(--beer_brown)');
 
-
         selection.exit()
           .transition(t)
           .attr('r', 0)
@@ -179,11 +178,21 @@ function scatterplot(beers, exists) {
         const beerTooltip = d3.select('.scatterplot')
           .append('div')
           .attr('class', 'beerTooltip')
-          .style('left', `${beerCx + 60}px`) //+80
-          .style('top', `${beerCy + 20}px`) //-150
+          .style('left', () => {
+            if (beerCy > 94) {
+              return `${beerCx + 60}px`;
+            } else {
+              return `${beerCx + 80}px`;
+            }
+          })
+          .style('top', () => {
+            if (beerCy > 370) {
+              return `${beerCy - 200}px`;
+            } else {
+              return `${beerCy + 30}px`;
+            }
+          });
 
-          //to do: if beerCy is above a certain value (150?), position the tooltip differently
-          //do this with the tertiary operator
          
                     
         const beerAttribute = (attributeName, attributeValue, color) => {
@@ -225,6 +234,7 @@ function scatterplot(beers, exists) {
              d3.selectAll('.beer')
               .attr('fill', 'var(--beer_brown)')
         });
+        
 }
 
 export default scatterplot;

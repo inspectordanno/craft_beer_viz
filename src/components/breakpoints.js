@@ -1,4 +1,4 @@
-import {selectAll} from 'd3-selection';
+import {selectAll} from 'd3';
 
 // this file creates breakpoints and sizes the charts
 
@@ -28,6 +28,14 @@ export let histHeight;
 export let scatterWidth;
 export let scatterHeight;
 
+//resize beers
+// export let mobileBeers = () => {
+//   if (wW < 768) {
+//     selectAll('.beer')
+//       .attr('r', 1);
+//   }
+// }
+
 
 //then, I set my breakpoints
 
@@ -49,7 +57,7 @@ if (wW >= 768 ) {
 //phone 
 } else if (wW < 768) {
 
-  mapWidth = 336;
+  mapWidth = 250;
   mapHeight = 222;
   // mapWidth = document.querySelector('.map').clientWidth;
 
