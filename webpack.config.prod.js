@@ -7,7 +7,7 @@ const webpack = require('webpack');
 module.exports = merge(common, {
   devtool: 'source-map',
 	plugins:[
-		new UglifyJSPlugin(),
+    new webpack.optimize.UglifyJsPlugin({ sourceMap: true, minimize: true }),
 		new webpack.DefinePlugin({
 			'process.env': {'NODE_ENV':JSON.stringify('production')}
 		})
