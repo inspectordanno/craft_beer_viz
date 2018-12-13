@@ -1,11 +1,8 @@
-import {selectAll} from 'd3';
-
 // this file creates breakpoints and sizes the charts
 
 //first, I get the window dimensions
 
 const wW = window.innerWidth;
-const wH = window.innerHeight;
 
 //then, I define a margin
 
