@@ -49,7 +49,7 @@
     "mime": "^2.4.4",
     "react": "^16.8.6",
     "ssri": "^6.0.1",
-    "svg-url-loader": "^2.3.2"
+    "svg-url-loader": "^8.0.0"
   },
   "babel": {
     "presets": [
